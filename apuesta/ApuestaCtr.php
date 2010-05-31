@@ -47,7 +47,25 @@ class ApuestaCtr
 	function fixture(){
 		
 		global $sysController;
+		
+		if (isset($_GET["hash"])){
+			$hash=$_GET["hash"];		
+		}
+		
+		$user=new User();
+		$res=$user->loadByHash($hash);
+		
+		if ($res!=0){
+			
+			$ui=new GenericUI();
+			$sysController->msg="<h3 style='margin-bottom:400px'>Solicita un link valido para participar o bien utiliza el que te fue entregado.</h3>";
+			$sysController->ui=$ui;	
+			return;
+			
+		}
 
+		$sysController->hash=$hash;
+		$sysController->idApp=$user->idApp;
 		$sysController->msg="<h1>Fixture</h1>";
 	
 		$apuesta=new Apuesta();
@@ -77,30 +95,32 @@ class ApuestaCtr
 			
 			$ui=new GenericUI();
 			$sysController->msg="<h3 style='margin-bottom:400px'>Solicita un link valido para participar o bien utiliza el que te fue entregado.</h3>";
+			$sysController->ui=$ui;
+			return;
+		} 
+		
+		$sysController->hash=$hash;
+		$sysController->idApp=$user->idApp;
+		
+		$apuesta=new Apuesta();
+		$apuesta->hash=$hash;
+		$apuesta->loadByUsername($user->username);
+		$apuesta->modApuesta=" style='display:none' ";
+		
+		//tbEstado check
+		if ($apuesta->tbEstado=="C"){
+		
+			$ui=new GenericUI();
+			$sysController->msg="<h3 style='margin-bottom:400px'>La apuesta esta Cerrada.<br>Espere al comienzo del torneo.</h3>";
 			$sysController->ui=$ui;	
 			
 		} else {
-
-			$apuesta=new Apuesta();
-			$apuesta->hash=$hash;
-			$apuesta->loadByUsername($user->username);
-			$apuesta->modApuesta=" style='display:none' ";
-			
-			//tbEstado check
-			if ($apuesta->tbEstado=="C"){
-			
-				$ui=new GenericUI();
-				$sysController->msg="<h3 style='margin-bottom:400px'>La apuesta esta Cerrada.<br>Espere al comienzo del torneo.</h3>";
-				$sysController->ui=$ui;	
 				
-			} else {
-					
-				$ui=new ApuestaUI();
-				$ui->data=$apuesta;
-				$sysController->msg="<h1>Apuesta - Bienvenido " . $apuesta->username . "!!</h1><br>
-									Una vez que guardes la apuesta no podes modificarla.";
-				$sysController->ui=$ui;
-			}
+			$ui=new ApuestaUI();
+			$ui->data=$apuesta;
+			$sysController->msg="<h1>Apuesta - Bienvenido " . $apuesta->username . "!!</h1><br>
+								Una vez que guardes la apuesta no podes modificarla.";
+			$sysController->ui=$ui;
 		}
 	}
 	

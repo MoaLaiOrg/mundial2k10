@@ -114,6 +114,10 @@ hr {
 	background: url(images/bg02.jpg) no-repeat center top;
 }
 
+#header.epson {
+	background: url(images/bg02old.jpg) no-repeat center top;
+}
+
 /** MENU */
 
 #menu {

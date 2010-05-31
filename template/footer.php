@@ -4,7 +4,7 @@
 		</div>
 
 		<div id="footer">
-			<p>Copyright (c) 2009 Websitename. All rights reserved.</p>
+			<p>Sudafrica 2010</p>
 		</div>
 		
 		<!-- google analytics -->

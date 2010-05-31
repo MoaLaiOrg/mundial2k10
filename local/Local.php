@@ -12,7 +12,7 @@ class Local
 	public function getUser(){return "root";}
 	public function getPassword(){return "";}
 	public function getDbName(){return "mundial2k10";}
-	public function getSiteBase(){return "http://localhost/sites/mundial2k10/";}
+	public function getSiteBase(){return "http://localhost:81/sites/mundial2k10/";}
 	
 }	
 ?>

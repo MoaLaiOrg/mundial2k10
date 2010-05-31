@@ -19,7 +19,7 @@
 			@import url("template/subLayout.css");
 		-->
 	</style>
-	
+
 	<!-- jquery -->
 	<script src="template/js/jquery-1.4.2.min.js" type="text/javascript" ></script> 
 	
@@ -29,15 +29,16 @@
 </head>
 
 <body class="homepage">
-	<div id="header">
+	<div id="header" class="<?php if($sysController->idApp=="epson"){echo "epson";}?>">
 		<h1 class="container">Mundial 2k10</h1>
 		<p></p>
 	</div>
 	<div id="menu">
+		<?php echo $sysController->idApp;?>
 		<ul>
 			<!--li><a href="ranking/" accesskey="1" title="">Ranking</a></li-->
-			<li><a href="apuesta/" accesskey="2" title="">Fixture</a></li>
-			<li><a href="apuesta/?do=edit" accesskey="3" title="">Mi apuesta</a></li>
+			<li><a href="apuesta/?hash=<?php echo $sysController->hash;?>" accesskey="2" title="">Fixture</a></li>
+			<li><a href="apuesta/?do=edit&hash=<?php echo $sysController->hash;?>" accesskey="3" title="">Mi apuesta</a></li>
 		</ul>
 	</div>
 	<div id="page-bg">

@@ -9,11 +9,13 @@ class SysController
 	public $sysLayout;
 	public $ui;
 	public $msg;
+	public $hash;
 
 	function SysController(){
 		$this->ui=null;
 		$this->sysLayout=new SysLayout();
 		$this->msg="";
+		$this->hash="";
 		//$this->SITE_BASE="http://www.moalais.com.ar/sites/mundial2k10/";
 	}
 	
