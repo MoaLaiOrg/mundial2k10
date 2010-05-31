@@ -34,7 +34,6 @@
 		<p></p>
 	</div>
 	<div id="menu">
-		<?php echo $sysController->idApp;?>
 		<ul>
 			<!--li><a href="ranking/" accesskey="1" title="">Ranking</a></li-->
 			<li><a href="apuesta/?hash=<?php echo $sysController->hash;?>" accesskey="2" title="">Fixture</a></li>

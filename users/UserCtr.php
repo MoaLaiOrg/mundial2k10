@@ -35,9 +35,15 @@ class UserCtr
 		if ($hash!="elhombredelacararoja" && $hash!="milanesa"){
 			echo "<br>invalid admin";
 			exit(); 
-		}		
+		}
 		
-		//echo "<br>--" . $do;
+		if ($hash=="elhombredelacararoja"){$hash="epson";}
+		if ($hash=="milanesa"){$hash="egel";}
+
+		$sysController->hash=$hash;	
+		$sysController->idApp=$hash;	
+		
+		//echo "<br>--" . $sysController->idApp;
 		
 		if ($do=="adduser")
 			$this->addUser();
