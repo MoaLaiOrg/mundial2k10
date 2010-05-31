@@ -1,0 +1,88 @@
+/** WRAPPER */
+
+.inputGoles{
+	width:20px;
+	text-align:center;
+}
+
+.tdGoles{
+	text-align:center;
+}
+
+.tdFinal{
+	text-align:center;
+}
+
+.tdPuntos{
+	text-align:center;
+}
+
+.fecha{
+	width:120px;
+	color: #11ABDD;
+}
+
+.flag{
+	width:20px;
+	border:0px solid blue;	
+}
+
+.flagIco{	
+	border:1px solid gray;
+}
+
+.powerUps{
+	width:150px;
+	border:0px solid blue;
+}
+
+.equipo{
+	width:100px;
+	border:0px solid blue;
+}
+
+.equipoL{
+	width:100px;
+	border:0px solid blue;
+	text-align:right;
+}
+
+#tblApuesta{
+	width:550px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+}
+
+#powerUps{
+	width:550px;
+	margin-top:50px; 
+	margin-left:auto; 
+	margin-right:auto; 
+	text-align:left;
+}
+
+#tblUsers{
+	width:400px;
+	/*margin-left:auto;*/
+	margin-right:auto;
+	text-align:left;
+}
+
+.titles{
+	width:550px;
+	
+	/*margin-left:auto;*/
+	margin-right:auto;
+	text-align:left;
+	/*margin-bottom:25px;*/
+}
+
+.btnSave{
+	font-size:13px;
+}
+
+.msg{
+	color:red;
+	font-weight:bold;
+}
