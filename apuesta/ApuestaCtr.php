@@ -119,7 +119,7 @@ class ApuestaCtr
 			$ui=new ApuestaUI();
 			$ui->data=$apuesta;
 			$sysController->msg="<h1>Apuesta - Bienvenido " . $apuesta->username . "!!</h1><br>
-								Una vez que guardes la apuesta no podes modificarla.";
+								Una vez que guardes la apuesta no podes modificarla. El torneo empieza un dia antes del mundial. En ese momento se publicara ranking y anotados.";
 			$sysController->ui=$ui;
 		}
 	}
