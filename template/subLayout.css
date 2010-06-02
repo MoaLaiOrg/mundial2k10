@@ -36,6 +36,10 @@
 	border:0px solid blue;
 }
 
+.powerUp{
+	cursor:pointer;
+}
+
 .equipo{
 	width:100px;
 	border:0px solid blue;
@@ -86,3 +90,13 @@
 	color:red;
 	font-weight:bold;
 }
+
+.tooltip {
+	display:none;
+	background:transparent url("/sites/mundial2k10/lib/jquery/jTools/black_arrow.png");
+	font-size:12px;
+	height:70px;
+	width:160px;
+	padding:25px;
+	color:white;	
+}	

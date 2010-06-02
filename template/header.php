@@ -23,8 +23,11 @@
 	<!-- jquery -->
 	<script src="template/js/jquery-1.4.2.min.js" type="text/javascript" ></script> 
 	
-	<!--jmp3-->	
+	<!--jmp3 -->	
 	<script src="lib/jquery/jMp3/jquery.jmp3.js" type="text/javascript" ></script>
+	
+	<!--tooltip -->	
+	<script src="lib/jquery/jTools/jquery.tools.min.js" type="text/javascript"></script>
 
 </head>
 

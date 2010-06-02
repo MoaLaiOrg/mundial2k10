@@ -86,15 +86,33 @@ class ApuestaUi
 						</td>
 
 						<td class="powerUps">
-							<?php if ($partido->mkCoke==1){?><img src="imgs/coke.gif" style="border:0px solid gray"></img><?php }?>
-							<?php if ($partido->mkBazan==1){?><img src="imgs/bazanSmall.gif" style="border:0px solid gray"></img><?php }?>
-							<?php if ($partido->mkVieja==1){?><img src="imgs/vieja.gif" style="border:0px solid gray"></img><?php }?>
-							<?php if ($partido->mkMotoraton==1){?><img src="imgs/motoraton.gif" style="border:0px solid gray"></img><?php }?>
-							<?php if ($partido->mkExcellent>=1){?><img src="imgs/excellent.gif" style="border:0px solid gray"></img><?php }?>
-							<?php if ($partido->mkAmargo>=1){?><img src="imgs/amargo.gif" style="border:0px solid gray"></img><?php }?>
-							<?php if ($partido->mkUsa>=1){?><img src="imgs/usa.gif" style="border:0px solid gray"></img><?php }?>
-							<?php if ($partido->mkHyena>=1){?><img src="imgs/hyena.gif" style="border:0px solid gray"></img><?php }?>
-							<?php if ($partido->mkTriste>=1){?><img src="imgs/triste.gif" style="border:0px solid gray"></img><?php }?>
+							<?php if ($partido->mkCoke==1){?>
+								<img class="powerUp" src="imgs/coke.gif" title="COKE - Si acierta resultado resta dos puntos (+2)"/>
+							<?php }?>
+							<?php if ($partido->mkBazan==1){?>
+								<img class="powerUp" src="imgs/bazanSmall.gif" title="BAZAN - Si no acierta resultado resta dos puntos (-2)"></img>
+							<?php }?>
+							<?php if ($partido->mkVieja==1){?>
+								<img class="powerUp" src="imgs/vieja.gif" title="VIEJA - Acierta multiplica por tres (x3) Si erra por tres negativo x(-3)"></img>
+							<?php }?>
+							<?php if ($partido->mkMotoraton==1){?>
+								<img class="powerUp" src="imgs/motoraton.gif" title="Coke - Si acierta resultado suma dos puntos (+2)"></img>
+							<?php }?>
+							<?php if ($partido->mkExcellent>=1){?>
+								<img class="powerUp" src="imgs/excellent.gif" title="Coke - Si acierta resultado suma dos puntos (+2)"></img>
+							<?php }?>
+							<?php if ($partido->mkAmargo>=1){?>
+								<img class="powerUp" src="imgs/amargo.gif" title="Coke - Si acierta resultado suma dos puntos (+2)"></img>
+							<?php }?>
+							<?php if ($partido->mkUsa>=1){?>
+								<img class="powerUp" src="imgs/usa.gif" title="Coke - Si acierta resultado suma dos puntos (+2)"></img>
+							<?php }?>
+							<?php if ($partido->mkHyena>=1){?>
+								<img class="powerUp" src="imgs/hyena.gif" title="Coke - Si acierta resultado suma dos puntos (+2)"></img>
+							<?php }?>
+							<?php if ($partido->mkTriste>=1){?>
+								<img class="powerUp" src="imgs/triste.gif" title="Coke - Si acierta resultado suma dos puntos (+2)"></img>
+							<?php }?>
 						</td>					
 					</tr>					
 				<?php
@@ -135,7 +153,6 @@ class ApuestaUi
 					}
 				});
 				
-				//
 				//jMP3 init
 				$("#external").jmp3({
 					filepath: "lib/jquery/jMp3/",
@@ -146,6 +163,9 @@ class ApuestaUi
 					showdownload: "false",
 					autoplay: "true"
 				});
+				
+				//tooltip
+				$(".powerUp").tooltip();
 				
 			});
 		</script>
