@@ -2,6 +2,8 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserMdl.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserUI.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserPublicUI.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserPublicCoolirisUI.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserMdl.php');
 
 class UserCtr
@@ -66,7 +68,9 @@ class UserCtr
 		$users=new Users();
 		$users->load($hash, $tbEstado);
 		
-		$ui=new UserUI();
+		//$ui=new UserUI();
+		//$ui=new UserPublicUI();
+		$ui=new UserPublicCoolirisUI();
 		$ui->data["user"]=new User();
 		$ui->data["users"]=$users;
 		
