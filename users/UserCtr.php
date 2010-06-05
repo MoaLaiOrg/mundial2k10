@@ -59,13 +59,12 @@ class UserCtr
 
 		global $sysController;
 		
-		if (isset($_GET["hash"])){
-			$hash=$_GET["hash"];		
-		}
-
+		if (isset($_GET["hash"])){$hash=$_GET["hash"];}		
+		if (isset($_GET["tbEstado"])){$tbEstado=$_GET["tbEstado"];}
+		
 		//go
 		$users=new Users();
-		$users->load($hash);
+		$users->load($hash, $tbEstado);
 		
 		$ui=new UserUI();
 		$ui->data["user"]=new User();

@@ -86,12 +86,19 @@ class Users
 	
 	//----------------
 	
-	function load($hash){
+	function load($hash, $tbEstado){
 	
 		if ($hash=="elhombredelacararoja"){$hash="epson";}
 		if ($hash=="milanesa"){$hash="egel";}
+		
+		if ($tbEstado==null){
+			$tbEstado="'A', 'C', 'P'";
+		}else{
+			$tbEstado="'" . $tbEstado . "'";
+		}
 
-		$query="select * from vwusuario where idApp='$hash' order by nombre";
+		$query="select * from vwusuario where idApp='$hash' and tbEstado 
+			in ($tbEstado) order by nombre";
 		//echo "<br>--" . $query;
 		$result=mysql_query($query) or die(mysql_error());
 		$num=mysql_numrows($result);
@@ -105,6 +112,7 @@ class Users
 			$aux->tbEstado=mysql_result($result, $i, "tbEstado");
 			if ($aux->tbEstado=='P'){$aux->tbEstado='Pendiente';}
 			if ($aux->tbEstado=='C'){$aux->tbEstado='Cerrado';}
+			if ($aux->tbEstado=='A'){$aux->tbEstado='Abierta';}
 
 			$this->list[]=$aux;
 			$i++;

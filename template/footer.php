@@ -1,7 +1,9 @@
 			
-			<div class="clearfix">&nbsp;</div>
+				<div class="clearfix">&nbsp;</div>
+				</div>
 			</div>
 		</div>
+	</div>
 
 		<div id="footer">
 			<p>Sudafrica 2010</p>
