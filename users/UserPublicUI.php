@@ -22,21 +22,25 @@ class UserPublicUi
 		</div>
 		
 		<div class="titles">
-			<h3>Estan jugando</h3>	
+			<h3>Estan jugando</h3>
 		</div>
 		
-		<ul id="tblUsers" cellpadding=3 cellspacing=0>
-			
-			<?php 
-			//print_r ($this->data["users"]->list);
-			foreach ($this->data["users"]->list as $user){?>
-				<li>
-					<img width="30px" height="30px" src="http://www.egelforum.net/forum/avatars/amigos/<?php echo $user->username?>.gif"></img>
-					<?php echo $user->username?>
-				</li>				
+		<table cellpadding=5px cellspacing=0 width="500px">
+			<tr>
+			<?php
+			$i=0;
+			foreach ($this->data["users"]->list as $user){
+				$i++;
+				if (($i % 7)==0) {echo "</tr><tr>";}
+				?>
+				<td>
+					<img style="border:1px solid silver" width="50px" height="50px" 
+					src="http://www.egelforum.net/forum/avatars/amigos/<?php echo $user->username?>.gif"
+					title="<?php echo $user->username?>"></img>
+				</td>
 			<?php }?>
-
-		</ul>
+			</tr>
+		</table>
 	<?php
 	}
 }?>

@@ -97,7 +97,7 @@ class ApuestaUi
 								<img class="powerUp" src="imgs/vieja.gif" title="VIEJA: Si acierta el resultado del partido, triplica los puntos (x3) Si falla triplica negativo x(-3)"></img>
 							<?php }?>
 							<?php if ($partido->mkMotoraton==1){?>
-								<img class="powerUp" src="imgs/motoraton.gif" title="LAUCHA: Si acierta el resultado del partido, cuadriplica los puntos (x4)"></img>"></img>
+								<img class="powerUp" src="imgs/motoraton.gif" title="LAUCHA: Si acierta el resultado del partido, cuadriplica los puntos (x4)"></img></img>
 							<?php }?>
 							<?php if ($partido->mkExcellent>=1){?>
 								<img class="powerUp" src="imgs/excellent.gif" title="EXCELLENT: Si acierta los 3 partidos suma siete puntos extras (+7)"></img>

@@ -24,7 +24,7 @@ class User
 		
 		if ($num==1){
 			$this->username=$username;
-			$this->hash=mysql_result($result, $i, "hash");
+			$this->hash=mysql_result($result, 0, "hash");
 		}
 		return 0;
 	}
@@ -86,18 +86,15 @@ class Users
 	
 	//----------------
 	
-	function load($hash, $tbEstado){
+	function load($idApp, $tbEstado){
 	
-		if ($hash=="elhombredelacararoja"){$hash="epson";}
-		if ($hash=="milanesa"){$hash="egel";}
-		
 		if ($tbEstado==null){
 			$tbEstado="'A', 'C', 'P'";
 		}else{
 			$tbEstado="'" . $tbEstado . "'";
 		}
 
-		$query="select * from vwusuario where idApp='$hash' and tbEstado 
+		$query="select * from vwusuario where idApp='$idApp' and tbEstado 
 			in ($tbEstado) order by nombre";
 		//echo "<br>--" . $query;
 		$result=mysql_query($query) or die(mysql_error());

@@ -29,51 +29,51 @@ class UserCtr
 			}
 		}
 		
-		//admin?
-		if (isset($_GET["hash"])){
-			$hash=$_GET["hash"];		
-		}
+		$hash="";
+		if (isset($_GET["hash"])){$hash=$_GET["hash"];}		
+		if ($do=="showPlayers"){$hash="milanesa";}
 		
+		//admin?
 		if ($hash!="elhombredelacararoja" && $hash!="milanesa"){
 			echo "<br>invalid admin";
 			exit(); 
 		}
-		
+
 		if ($hash=="elhombredelacararoja"){$hash="epson";}
 		if ($hash=="milanesa"){$hash="egel";}
 
 		$sysController->hash=$hash;	
 		$sysController->idApp=$hash;	
-		
+
 		//echo "<br>--" . $sysController->idApp;
-		
 		if ($do=="adduser")
-			$this->addUser();
+			$this->addUser($sysController->hash);
 			
 		if ($do=="newUser")
-			$this->newUser();	
+			$this->newUser($sysController->hash);
+		
+		if ($do=="showPlayers")
+			$this->showPlayers($sysController->hash);	
 
 	}
 	
 	//----------------
 	
-	function newUser(){
+	function newUser($hash){
 
 		global $sysController;
 		
-		if (isset($_GET["hash"])){$hash=$_GET["hash"];}		
+		$tbEstado=null;
 		if (isset($_GET["tbEstado"])){$tbEstado=$_GET["tbEstado"];}
 		
 		//go
 		$users=new Users();
 		$users->load($hash, $tbEstado);
 		
-		//$ui=new UserUI();
-		//$ui=new UserPublicUI();
-		$ui=new UserPublicCoolirisUI();
+		$ui=new UserUI();
 		$ui->data["user"]=new User();
 		$ui->data["users"]=$users;
-		
+
 		$sysController->msg="<h1>Control de usuarios</h1>";
 		$sysController->ui=$ui;
 
@@ -81,7 +81,28 @@ class UserCtr
 	
 	//----------------
 	
-	function addUser(){
+	function showPlayers($hash){
+	
+		//echo "<br>showPlayers";
+
+		global $sysController;
+		
+		//go
+		$users=new Users();
+		$users->load("egel", "C");
+		
+		$ui=new UserPublicUI();		
+		$ui->data["user"]=new User();
+		$ui->data["users"]=$users;
+		
+		$sysController->msg="<h1>Estan jugando!</h1>";
+		$sysController->ui=$ui;
+
+	}
+	
+	//----------------
+	
+	function addUser($hash){
 		
 		global $sysController;
 		
@@ -92,16 +113,12 @@ class UserCtr
 			exit(); 
 		}
 		
-		if (isset($_GET["hash"])){
-			$hash=$_GET["hash"];		
-		}
-		
 		$sysController->msg="<h1>Control de usuarios</h1>";
 		
 		$user=new User();
 		$user->add($username, $hash);
 		$users=new Users();
-		$users->load($hash);
+		$users->load($hash, null);
 
 		$ui=new UserUI();
 		$ui->data["user"]=$user;

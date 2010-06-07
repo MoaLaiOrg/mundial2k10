@@ -16,6 +16,8 @@ class ApuestaCtr
 	
 	function control(){
 	
+		global $sysController;
+	
 		if (isset($_POST["do"])){
 			$do=$_POST["do"];
 		}else{
@@ -24,6 +26,11 @@ class ApuestaCtr
 			}else{
 				$do="fixture";
 			}
+		}
+		
+		//echo "<br>--" . $sysController->getHash();
+		if (isset($_GET["hash"])){
+			$sysController->setHash($_GET["hash"]);
 		}
 		
 		//echo "<br>--" . $do;
@@ -48,12 +55,8 @@ class ApuestaCtr
 		
 		global $sysController;
 		
-		if (isset($_GET["hash"])){
-			$hash=$_GET["hash"];		
-		}
-		
 		$user=new User();
-		$res=$user->loadByHash($hash);
+		$res=$user->loadByHash($sysController->getHash());
 		
 		if ($res!=0){
 			
@@ -64,7 +67,6 @@ class ApuestaCtr
 			
 		}
 
-		$sysController->hash=$hash;
 		$sysController->idApp=$user->idApp;
 		$sysController->msg="<h1>Fixture</h1>";
 	
@@ -84,12 +86,8 @@ class ApuestaCtr
 		
 		global $sysController;
 		
-		if (isset($_GET["hash"])){
-			$hash=$_GET["hash"];		
-		}
-		
 		$user=new User();
-		$res=$user->loadByHash($hash);
+		$res=$user->loadByHash($sysController->getHash());
 		
 		if ($res!=0){
 			
@@ -98,12 +96,11 @@ class ApuestaCtr
 			$sysController->ui=$ui;
 			return;
 		} 
-		
-		$sysController->hash=$hash;
+				
 		$sysController->idApp=$user->idApp;
 		
 		$apuesta=new Apuesta();
-		$apuesta->hash=$hash;
+		//$apuesta->hash=$hash;
 		$apuesta->loadByUsername($user->username);
 		$apuesta->modApuesta=" style='display:none' ";
 		
@@ -152,19 +149,11 @@ class ApuestaCtr
 	function saveApuesta(){
 		
 		//echo "<br>--saveApuesta";
-		
 		global $sysController;
-		
-		if (isset($_POST["hash"])){
-			$hash=$_POST["hash"];
-		}else{
-			echo "<br>hash?";
-			exit(); 
-		}
 
 		//hash check
 		$user=new User();
-		$res=$user->loadByHash($hash);
+		$res=$user->loadByHash($sysController->getHash());
 		if ($res!=0){
 			echo "<br>Invalid hash";
 			exit(); 
@@ -172,7 +161,6 @@ class ApuestaCtr
 		
 		//save
 		$apuesta=new Apuesta();
-		$apuesta->hash=$hash;
 		$res=$apuesta->loadByUsername($user->username);
 		
 		$arrParam=array();		
@@ -188,6 +176,7 @@ class ApuestaCtr
 			
 		}
 		
+		//echo "<br>" . $apuesta->tbEstado;
 		if ($apuesta->tbEstado!="C"){ //control de closed
 			$res=$apuesta->save($arrParam);
 		}

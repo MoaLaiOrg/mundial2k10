@@ -6,14 +6,15 @@ class Apuesta
 	public $partidos;
 	public $idApuesta;
 	public $username;
-	public $tbEstado;
-	
+	public $tbEstado;	
 	public $modFixture;
+	public $modApuesta;
 		
 	function Apuesta(){
 		$this->partidos=array();
 		$this->idApuesta=-1;
 		$this->modFixture="";
+		$this->modApuesta="";
 		$this->tbEstado=null;
 		
 		//$this->load();
@@ -42,6 +43,7 @@ class Apuesta
 		}
 		
 		$sql="update apuesta set tbEstado='C' where idApuesta=" . $this->idApuesta ;
+		//echo "<br>" . $sql;
 		$result=mysql_query($sql);
 		
 		$sysController->msg=
@@ -66,8 +68,8 @@ class Apuesta
 		if ($num==0){return -1;}
 		
 		$this->username=$username;
-		$this->idApuesta=mysql_result($result, $i, "idApuesta");
-		$this->tbEstado=mysql_result($result, $i, "tbEstado");
+		$this->idApuesta=mysql_result($result, 0, "idApuesta");
+		$this->tbEstado=mysql_result($result, 0, "tbEstado");
 		
 		//detalle
 		$query="select * from vwApuestaDetallePuntos where idApuesta=" 
@@ -82,6 +84,7 @@ class Apuesta
 		}
 		
 		$i=0;
+		$fechaAnterior="x";
 		while ($i < $num) {
 		
 			$aux=new ApuestaItem();

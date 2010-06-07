@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/system/SysController.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/apuesta/ApuestaCtr.php');
 
@@ -13,5 +14,4 @@ $sysController->ui->display();
 $sysController->sysLayout->footer();
 
 $sysController->end();
-
 ?>

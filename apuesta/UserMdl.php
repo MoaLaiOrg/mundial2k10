@@ -25,9 +25,9 @@ class User
 		$num=mysql_numrows($result);		
 		if ($num==0){return -1;}
 		
-		$this->idApp=mysql_result($result, $i, "idApp");
-		$this->username=mysql_result($result, $i, "nombre");
-		$this->hash=mysql_result($result, $i, "hash");
+		$this->idApp=mysql_result($result, 0, "idApp");
+		$this->username=mysql_result($result, 0, "nombre");
+		$this->hash=mysql_result($result, 0, "hash");
 	
 	}
 	

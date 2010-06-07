@@ -30,6 +30,22 @@ class SysController
 
 	//-------------------------
 
+	public function setHash($hash){
+		$_SESSION["hash"]=$hash;
+	}
+
+	//-------------------------
+
+	public function getHash(){
+		if (isset($_SESSION["hash"])){
+			return $_SESSION["hash"];
+		}else{ 
+			return "";
+		}	
+	}
+
+	//-------------------------
+
 	public function end(){
 		//$this->sysLayout->footer();
 	}
