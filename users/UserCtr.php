@@ -95,7 +95,7 @@ class UserCtr
 		$ui->data["user"]=new User();
 		$ui->data["users"]=$users;
 		
-		$sysController->msg="<h1>Estan jugando!</h1>";
+		$sysController->msg="<h1>Players</h1>";
 		$sysController->ui=$ui;
 
 	}

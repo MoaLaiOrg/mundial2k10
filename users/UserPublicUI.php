@@ -22,7 +22,7 @@ class UserPublicUi
 		</div>
 		
 		<div class="titles">
-			<h3>Estan jugando</h3>
+			<h3>Pedile un acceso a cami kabro o dum :3</h3>
 		</div>
 		
 		<table cellpadding=5px cellspacing=0 width="500px">
@@ -31,7 +31,7 @@ class UserPublicUi
 			$i=0;
 			foreach ($this->data["users"]->list as $user){
 				$i++;
-				if (($i % 7)==0) {echo "</tr><tr>";}
+				if (($i % 12)==0) {echo "</tr><tr>";}
 				?>
 				<td>
 					<img style="border:1px solid silver" width="50px" height="50px" 
