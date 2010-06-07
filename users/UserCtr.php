@@ -89,7 +89,7 @@ class UserCtr
 		
 		//go
 		$users=new Users();
-		$users->load("egel", "C");
+		$users->load("egel", null);
 		
 		$ui=new UserPublicUI();		
 		$ui->data["user"]=new User();
