@@ -128,22 +128,31 @@ class ApuestaCtr
 	
 	function viewApuesta(){
 		
-		echo "<br>--viewApuesta";
+		global $sysController;
+		
+		$user=new User();
+		$res=$user->loadByHash($sysController->getHash());
+		
+		if ($res!=0){
+			
+			$ui=new GenericUI();
+			$sysController->msg="<h3 style='margin-bottom:400px'>Solicita un link valido para participar o bien utiliza el que te fue entregado.</h3>";
+			$sysController->ui=$ui;
+			return;
+		} 
+				
+		$sysController->idApp=$user->idApp;
+		
 		$apuesta=new Apuesta();
-		
-		if (isset($_GET["username"])){
-			$username=$_GET["username"];
-		}else{
-			echo "<br>username?";
-			exit(); 
-		}
-		
-		$apuesta->loadByUsername($username);
-		$apuesta->modViewFixture=" style='display:none' ";
-		
-		//
-		$ui=new ApuestaUI();		
-		$ui->showApuesta($apuesta);
+		$apuesta->loadByUsername($user->username);
+		$apuesta->modApuestaAbierta=" style='display:none' ";
+
+		$sysController->msg="<h1>Apuesta - Bienvenido " . $apuesta->username . "!!</h1><br>
+								Una vez que guardes la apuesta no podes modificarla. El torneo empieza un dia antes del mundial. En ese momento va a publicar el ranking.";
+
+		$ui=new ApuestaUI();
+		$ui->data=$apuesta;
+		$sysController->ui=$ui;
 
 	}
 	
