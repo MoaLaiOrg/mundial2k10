@@ -14,12 +14,14 @@ class ApuestaUi
 
 		global $sysController;
 		?>
+		<script src="apuesta/scripts.js" type="text/javascript"></script>
 		
 		<div class="titles">
 			<?php echo $sysController->msg?>
 		</div>
 		<!--span id="external" class="mp3">gambeta.mp3</span-->
-		<span id="external" class="mp3">monty.mp3</span>
+		<!--span id="external" class="mp3">monty.mp3</span-->
+		<span id="external" class="mp3">culo.mp3</span>
 		
 		<form name="frmApuesta" action="" method="post">
 		
@@ -34,9 +36,9 @@ class ApuestaUi
 					<td></td>
 					<td class="equipoL"></td>
 					<td class="tdGoles" <?php echo $this->data->modFixture?>>apuesta</td>
-					<td class="tdGoles" <?php echo $this->data->modApuesta?>>final</td>
-					<td class="tdPuntos" <?php echo $this->data->modFixture?> <?php echo $this->data->modApuesta?>>puntos</td>
-					<td class="tdGoles" <?php echo $this->data->modApuesta?>>final</td>
+					<td class="tdGoles" <?php echo $this->data->modResultadoFinal?>>final</td>
+					<td class="tdPuntos" <?php echo $this->data->modPuntos?>>puntos</td>
+					<td class="tdGoles" <?php echo $this->data->modResultadoFinal?>>final</td>
 					<td class="tdGoles" <?php echo $this->data->modFixture?>>apuesta</td>
 					<td class="equipo"></td>
 					<td class="powerUps"><b>PowerUps</b> (ver al pie)</td>
@@ -61,24 +63,32 @@ class ApuestaUi
 						
 						<td class="tdGoles" <?php echo $this->data->modFixture?>>
 							<input class='inputGoles' name='golesEquipo1[<?php echo $partido->idPartido?>]' 
-								value='<?php echo $partido->golesEquipo1?>'></input>
+								value='<?php echo $partido->golesEquipo1?>' <?php echo $this->data->modApuestaAbierta?>>
+							</input>
+							<span <?php echo $this->data->modApuestaCerrada?>>
+								<?php echo $partido->golesEquipo1?>
+							</span>
 						</td>
 						
-						<td class="tdFinal" <?php echo $this->data->modApuesta?>>
+						<td class="tdFinal" <?php echo $this->data->modResultadoFinal?>>
 							<?php echo $partido->golesFinalEquipo1?>
 						</td>
 						
-						<td class="tdPuntos" <?php echo $this->data->modFixture?> <?php echo $this->data->modApuesta?>>
+						<td class="tdPuntos" <?php echo $this->data->modPuntos?>>
 							<h3><?php echo $partido->puntos?></h3>
 						</td>
 						
-						<td class="tdFinal" <?php echo $this->data->modApuesta?>>
+						<td class="tdFinal" <?php echo $this->data->modResultadoFinal?>>
 							<?php echo $partido->golesFinalEquipo2?>
 						</td>
 						
 						<td class="tdGoles" <?php echo $this->data->modFixture?>>
 							<input class='inputGoles' name='golesEquipo2[<?php echo $partido->idPartido?>]' 
-								value='<?php echo $partido->golesEquipo2?>'></input>
+								value='<?php echo $partido->golesEquipo2?>' <?php echo $this->data->modApuestaAbierta?>>
+							</input>
+							<span <?php echo $this->data->modApuestaCerrada?>>
+								<?php echo $partido->golesEquipo2?>
+							</span>								
 						</td>
 
 						<td class="equipo">
@@ -121,75 +131,13 @@ class ApuestaUi
 			?>
 				<tr <?php echo $this->data->modFixture?>>
 					<td colspan='9' style='border-top:1px solid silver; text-align:right;'>
-						<input id="btnSave" class="btnSave" type="button" value="Guardar Apuesta">
+						<input id="btnSave" class="btnSave" type="button" 
+						value="Guardar Apuesta" <?php echo $this->data->modApuestaAbierta?>>
 					</td>
 				</tr>
 			</table>
 			
 		</form>
-				
-		<script type="text/javascript">
-			$().ready(function() {
-			
-				$("#btnSave").click(function() {
-				
-					//validate
-					err=false;
-					$(".inputGoles").each(function(){
-						if (!IsNumeric($(this).attr("value"))){
-							err=true;
-						}
-					})
-
-					if (err==true){
-						alert("Faltan ingresar resultados");
-						return false;
-					}
-					
-					//confirm
-					if (!confirm('Esta seguro?\nUna vez enviada no podra modificarla.')){
-						return;
-					}else{
-						document.frmApuesta.submit();
-					}
-				});
-				
-				//jMP3 init
-				$("#external").jmp3({
-					filepath: "lib/jquery/jMp3/",
-					showfilename: "false",
-					backcolor: "ffd700",
-					forecolor: "8B4513",
-					width: 200,
-					showdownload: "false",
-					autoplay: "true"
-				});
-				
-				//tooltip
-				$(".powerUp").tooltip();
-				
-			});
-		</script>
-		
-		<script type="text/javascript">
-			function IsNumeric(sText){
-			
-				var ValidChars = "0123456789";
-				var IsNumber=true;
-				var Char;
-			   
-				if (sText.length==0)
-					IsNumber = false;
-					
-				for (i = 0; i < sText.length && IsNumber == true; i++){ 
-					Char = sText.charAt(i);
-					if (ValidChars.indexOf(Char) == -1) {
-						IsNumber = false;
-					}
-				}
-			   return IsNumber;		   
-			}
-		</script>
 
 	<?php
 	$sysController->sysLayout->awardPanel();

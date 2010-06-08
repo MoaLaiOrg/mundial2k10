@@ -12,7 +12,7 @@ class ApuestaCtr
 
 	}
 	
-	//----------------
+	//------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	function control(){
 	
@@ -49,7 +49,7 @@ class ApuestaCtr
 
 	}
 	
-	//----------------
+	//------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	function fixture(){
 		
@@ -80,7 +80,7 @@ class ApuestaCtr
 
 	}
 	
-	//----------------
+	//------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	function editApuesta(){
 		
@@ -102,26 +102,29 @@ class ApuestaCtr
 		$apuesta=new Apuesta();
 		//$apuesta->hash=$hash;
 		$apuesta->loadByUsername($user->username);
-		$apuesta->modApuesta=" style='display:none' ";
+		$apuesta->modResultadoFinal=" style='display:none' ";
+		$apuesta->modPuntos=" style='display:none' ";
 		
 		//tbEstado check
 		if ($apuesta->tbEstado=="C"){
 		
-			$ui=new GenericUI();
-			$sysController->msg="<h3 style='margin-bottom:400px'>La apuesta esta Cerrada.<br>Espere al comienzo del torneo.</h3>";
-			$sysController->ui=$ui;	
+			$apuesta->modApuestaAbierta=" style='display:none' ";
+			$sysController->msg="<h3 style='margin-bottom:10px'>La apuesta esta Cerrada.<br>Espere al comienzo del torneo.</h3>";
 			
 		} else {
 				
-			$ui=new ApuestaUI();
-			$ui->data=$apuesta;
+			$apuesta->modApuestaCerrada=" style='display:none' ";
 			$sysController->msg="<h1>Apuesta - Bienvenido " . $apuesta->username . "!!</h1><br>
 								Una vez que guardes la apuesta no podes modificarla. El torneo empieza un dia antes del mundial. En ese momento va a publicar el ranking.";
-			$sysController->ui=$ui;
+			
 		}
+		
+		$ui=new ApuestaUI();
+		$ui->data=$apuesta;
+		$sysController->ui=$ui;
 	}
 	
-	//----------------
+	//------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	function viewApuesta(){
 		
@@ -144,8 +147,8 @@ class ApuestaCtr
 
 	}
 	
-	//----------------
-	
+	//------------------------------------------------------------------------------------------------------------------------------------------------
+
 	function saveApuesta(){
 		
 		//echo "<br>--saveApuesta";

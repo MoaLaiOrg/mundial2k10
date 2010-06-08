@@ -7,15 +7,24 @@ class Apuesta
 	public $idApuesta;
 	public $username;
 	public $tbEstado;	
+
 	public $modFixture;
-	public $modApuesta;
+	public $modApuestaCerrada;
+	public $modApuestaAbierta;
+	public $modPuntos;
+	public $modResultadoFinal;
 		
 	function Apuesta(){
+	
 		$this->partidos=array();
 		$this->idApuesta=-1;
-		$this->modFixture="";
-		$this->modApuesta="";
 		$this->tbEstado=null;
+		
+		$this->modFixture="";
+		$this->modApuestaCerrada="";
+		$this->modApuestaAbierta="";
+		$this->modPuntos="";
+		$this->modResultadoFinal="";
 		
 		//$this->load();
 	}
