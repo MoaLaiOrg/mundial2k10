@@ -102,8 +102,8 @@ class ApuestaCtr
 		$apuesta=new Apuesta();
 		//$apuesta->hash=$hash;
 		$apuesta->loadByUsername($user->username);
-		$apuesta->modResultadoFinal=" style='display:none' ";
-		$apuesta->modPuntos=" style='display:none' ";
+		//$apuesta->modResultadoFinal=" style='display:none' ";
+		//$apuesta->modPuntos=" style='display:none' ";
 		
 		//tbEstado check
 		if ($apuesta->tbEstado=="C"){
