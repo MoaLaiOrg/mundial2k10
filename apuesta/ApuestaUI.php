@@ -36,9 +36,9 @@ class ApuestaUi
 					<td></td>
 					<td class="equipoL"></td>
 					<td class="tdGoles" <?php echo $this->data->modFixture?>>apuesta</td>
-					<td class="tdGoles" <?php echo $this->data->modResultadoFinal?>>final</td>
+					<td class="tdFinal" <?php echo $this->data->modResultadoFinal?>>final</td>
 					<td class="tdPuntos" <?php echo $this->data->modPuntos?>>puntos</td>
-					<td class="tdGoles" <?php echo $this->data->modResultadoFinal?>>final</td>
+					<td class="tdFinal" <?php echo $this->data->modResultadoFinal?>>final</td>
 					<td class="tdGoles" <?php echo $this->data->modFixture?>>apuesta</td>
 					<td class="equipo"></td>
 					<td class="powerUps"><b>PowerUps</b> (ver al pie)</td>
@@ -75,7 +75,7 @@ class ApuestaUi
 						</td>
 						
 						<td class="tdPuntos" <?php echo $this->data->modPuntos?>>
-							<h3><?php echo $partido->puntos?></h3>
+							<?php echo $partido->puntos?>
 						</td>
 						
 						<td class="tdFinal" <?php echo $this->data->modResultadoFinal?>>

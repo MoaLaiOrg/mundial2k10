@@ -83,9 +83,9 @@ class Apuesta
 		//detalle
 		$query="select * from vwApuestaDetallePuntos where idApuesta=" 
 		//$query="select * from vwApuestaDetallePuntosSrc where idApuesta=" 
-			. $this->idApuesta . " 
-			and (idEquipo1='br' or idEquipo2='br') 
-			order by fecha asc";
+			. $this->idApuesta  
+			//. " and (idEquipo1='br' or idEquipo2='br') "
+			. " order by fecha asc";
 		//echo "<br>--" . $query;	
 		$result=mysql_query($query) or die(mysql_error());
 		$num=mysql_numrows($result);		
@@ -124,13 +124,13 @@ class Apuesta
 			
 			//control
 			if ($aux->golesFinalEquipo1==null)
-				$aux->golesFinalEquipo1="?";
+				$aux->golesFinalEquipo1="-";
 				
 			if ($aux->golesFinalEquipo2==null)
-				$aux->golesFinalEquipo2="?";			
+				$aux->golesFinalEquipo2="-";			
 				
 			if ($aux->puntos==null)
-				$aux->puntos="?";
+				$aux->puntos="-";
 			
 			if ($fechaAnterior!=$sysController->formatShortDate($aux->fechaOriginal)){
 				$aux->modNuevaFecha="<tr><td colspan='9' style='border-top:1px solid silver;'>&nbsp;</td></tr>";

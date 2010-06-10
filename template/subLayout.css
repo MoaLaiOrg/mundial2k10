@@ -11,10 +11,15 @@
 
 .tdFinal{
 	text-align:center;
+	background-color:silver;
+	color:black;
 }
 
 .tdPuntos{
 	text-align:center;
+	background-color:#11ABDD;
+	color:white;	
+	font-weight:bold;	
 }
 
 .fecha{
@@ -52,7 +57,7 @@
 }
 
 #tblApuesta{
-	width:550px;
+	width:650px;
 	margin-left:auto;
 	margin-right:auto;
 	text-align:left;
