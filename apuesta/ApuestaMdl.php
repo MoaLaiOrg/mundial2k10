@@ -135,7 +135,30 @@ class Apuesta
 			if ($fechaAnterior!=$sysController->formatShortDate($aux->fechaOriginal)){
 				$aux->modNuevaFecha="<tr><td colspan='9' style='border-top:1px solid silver;'>&nbsp;</td></tr>";
 			}
-					
+
+			echo ("<br>" . $aux->fechaOriginal . "---");
+			
+			$arr=explode(" ", $aux->fechaOriginal);
+			$dFecha = explode("-", $arr[0]);
+			$anio=$dFecha[0]; 
+			$mes=$dFecha[1]; 
+			$dia=$dFecha[2];
+			
+			$dHora = explode(":", $arr[1]);
+			$hora=$dHora[0]; 
+			$minutos=$dHora[1];
+			
+			//print_r ($dHora);
+			
+			$final=mktime($hora, 0, 0, $mes, $dia, $anio);			
+			echo time();
+			echo " - ";
+			echo $final;
+			echo " - ";
+			echo $final-time();
+			echo " - ";
+			echo ($final-time()) / 3600;
+			
 			$fechaAnterior=$sysController->formatShortDate($aux->fechaOriginal);			
 			$this->partidos[]=$aux;
 			$i++;
