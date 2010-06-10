@@ -109,7 +109,8 @@ class ApuestaCtr
 		if ($apuesta->tbEstado=="C"){
 		
 			$apuesta->modApuestaAbierta=" style='display:none' ";
-			$sysController->msg="<h3 style='margin-bottom:10px'>La apuesta esta Cerrada.<br>Espere al comienzo del torneo.</h3>";
+			$sysController->msg="<h1>Apuesta - Bienvenido " . $apuesta->username . "!!</h1><br>
+								<h3 style='margin-bottom:10px'>La apuesta esta Cerrada.<br>Espere al comienzo del torneo.</h3>";
 			
 		} else {
 				

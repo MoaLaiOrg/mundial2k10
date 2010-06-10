@@ -31,7 +31,7 @@ $().ready(function() {
 		forecolor: "8B4513",
 		width: 200,
 		showdownload: "false",
-		//autoplay: "true"
+		autoplay: "true"
 	});
 	
 	//tooltip
