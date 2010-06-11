@@ -1,38 +1,42 @@
 <?php
 
-class ApuestaUi
+class RankingUi
 {
 
 	public $data;
-	function ApuestaUi(){
-		$this->data=null;
+	function RankingUi(){
+		$this->data=array();
+		$this->data["user"]=null;
+		$this->data["users"]=null;
 	}
 	
 	//----------------
 
 	function display(){
-
+	
 		global $sysController;
-		global $vwApuestaDetallePuntos;
-		global $vwApuestaDetalle;
-		global $vwPuntos;
+		?>
 		
-		for($i=0; $i<count($colItemRanking); $i++){?>
-			<tr>
-				<td class=td1>
-					<?=$colItemRanking[$i]->nombre?>
-				</td>
-				<td class=td1><?=$colItemRanking[$i]->idApuesta?></td>
-				<td class=<?=$keClassT?>>
-					<?=$colItemRanking[$i]->puntos?>
-				</td>
-				<td class=td4>
-					<a href='abmApuestaLate.php?idApuesta=<?=$colItemRanking[$i]->idApuesta?>&accion=modi'>
-						ver
-					</a>
-				</td>
-			</tr>
-		<?}?>
+		<div class="titles">
+			<?php echo $sysController->msg?>
+		</div>
+		
+		<table id="tblUsers" cellpadding=3 cellspacing=0>
+			
+			<?php 
+			//print_r ($this->data["users"]->list);
+			foreach ($this->data["users"]->list as $user){?>
+				<tr>
+					<td style='border-top:1px solid silver'>
+						<?php echo $user->username?>
+					</td>
+					<td style='border-top:1px solid silver'>
+						<?php echo $user->total?>
+					</td>
+				<tr>	
+			<?php }?>
+
+		</table>
 	<?php
 	}
 }?>

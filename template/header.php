@@ -40,8 +40,9 @@
 			<li><a href="apuesta/">Fixture</a></li>
 			<li><a href="apuesta/?do=edit">Mi apuesta</a></li>
 			<?php if($sysController->idApp=="egel"){ ?>
-				<li><a href="users/?do=showPlayers">Players</a></li>
+				<li><a href="users/?do=showPlayers">Players</a></li>				
 			<?php }?>
+			<li><a href="ranking/?do=show">Ranking</a></li>
 		</ul>
 	</div>
 

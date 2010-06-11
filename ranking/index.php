@@ -1,7 +1,7 @@
 <?php
-
-require_once('c:/wamp/www/sites/mundial2k10/' . '/system/SysController.php');
-require_once('c:/wamp/www/sites/mundial2k10/' . '/ranking/RankingCtr.php');
+session_start();
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/system/SysController.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/ranking/RankingCtr.php');
 
 $sysController=new SysController();
 $sysController->start();

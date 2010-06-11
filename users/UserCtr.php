@@ -4,7 +4,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserMdl.php')
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserUI.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserPublicUI.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserPublicCoolirisUI.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/users/UserMdl.php');
 
 class UserCtr
 {
