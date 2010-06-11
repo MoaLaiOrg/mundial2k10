@@ -51,12 +51,12 @@ class Ranking
 			
 			$this->list[]=$aux;			
 			$i++;
-			
+
 			if ($totalAnterior!=$aux->total){$order=$order+1;}
 			$totalAnterior=$aux->total;
 		}
 		
-		$lastRank=$order-1;
+		$lastRank=$order;
 		
 		//
 		$i=0; 
