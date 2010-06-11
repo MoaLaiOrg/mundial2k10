@@ -190,7 +190,7 @@ class ApuestaCtr
 		}
 		
 		//echo "<br>" . $apuesta->tbEstado;
-		if ($apuesta->tbEstado!="C"){ //control de closed
+		if ($apuesta->tbEstado=="A"){ //control de closed
 			$res=$apuesta->save($arrParam);
 		}
 		
