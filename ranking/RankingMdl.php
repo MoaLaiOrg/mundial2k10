@@ -31,7 +31,7 @@ class Ranking
 	//----------------
 	
 	function load($idApp){
-
+	
 		$query="select * from vwRanking where idApp='$idApp'";
 		//echo "<br>--" . $query;
 		$result=mysql_query($query) or die(mysql_error());
@@ -55,6 +55,16 @@ class Ranking
 			if ($totalAnterior!=$aux->total){$order=$order+1;}
 			$totalAnterior=$aux->total;
 		}
+		
+		$lastRank=$order-1;
+		
+		//
+		$i=0; 
+		foreach ($this->list as $item){			
+			if ($item->order==$lastRank){$item->img="<img src='imgs/lastRank.gif'/>"; }
+		}
+		
+		
 		//print_r ($this->list);		
 		return 0;
 	}
