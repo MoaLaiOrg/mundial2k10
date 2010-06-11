@@ -19,10 +19,7 @@ class ApuestaUi
 		<div class="titles">
 			<?php echo $sysController->msg?>
 		</div>
-		<!--span id="external" class="mp3">gambeta.mp3</span-->
-		<!--span id="external" class="mp3">monty.mp3</span-->
-		<!--span id="external" class="mp3">culo.mp3</span-->
-		<!--span id="external" class="mp3">sobad.mp3</span-->
+
 		<span id="external" class="mp3">soldan.mp3</span>
 		
 		<form name="frmApuesta" action="" method="post">

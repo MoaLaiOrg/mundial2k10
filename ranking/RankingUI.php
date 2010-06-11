@@ -16,10 +16,13 @@ class RankingUi
 	
 		global $sysController;
 		?>
+		<script src="ranking/scripts.js" type="text/javascript"></script>
 		
 		<div class="titles">
 			<?php echo $sysController->msg?>
 		</div>
+		
+		<span id="external" class="mp3">slum.mp3</span>
 		
 		<table id="tblUsers" cellpadding=3 cellspacing=0>
 			
