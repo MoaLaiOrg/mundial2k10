@@ -30,7 +30,7 @@ class RankingCtr
 
 		//
 		$user=new User();
-		$res=$user->loadByHash($sysController->getHash());
+		$res=$user->loadByHash($sysController->getHash());		
 		
 		if ($res!=0){
 			
@@ -38,11 +38,10 @@ class RankingCtr
 			$sysController->msg="<h3 style='margin-bottom:400px'>Solicita un link valido para participar o bien utiliza el que te fue entregado.</h3>";
 			$sysController->ui=$ui;
 			return;
-		} 
-				
+		} 		
+
 		$sysController->idApp=$user->idApp;
 
-		//echo "<br>--" . $sysController->idApp;
 		if ($do=="show")
 			$this->show($idApp);
 
@@ -58,7 +57,7 @@ class RankingCtr
 		
 		//go
 		$users=new Ranking();
-		$users->load("egel");
+		$users->load($sysController->idApp);
 		
 		$ui=new RankingUI();	
 		$ui->data["user"]=new User();

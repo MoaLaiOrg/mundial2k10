@@ -27,10 +27,17 @@ class RankingUi
 			//print_r ($this->data["users"]->list);
 			foreach ($this->data["users"]->list as $user){?>
 				<tr>
-					<td style='border-top:1px solid silver'>
+				
+					<td style='border-bottom:1px solid silver'>
+						<?php echo $user->img?>
+					</td>					
+					<td style='border-bottom:1px solid silver' valign="bottom">
+						<?php echo $user->order?>
+					</td>
+					<td style='border-bottom:1px solid silver' valign="bottom">
 						<?php echo $user->username?>
 					</td>
-					<td style='border-top:1px solid silver'>
+					<td class="tdPuntos" style='border-bottom:1px solid silver' valign="bottom">
 						<?php echo $user->total?>
 					</td>
 				<tr>	
