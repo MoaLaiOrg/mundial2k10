@@ -136,8 +136,6 @@ class Apuesta
 				$aux->modNuevaFecha="<tr><td colspan='9' style='border-top:1px solid silver;'>&nbsp;</td></tr>";
 			}
 
-			echo ("<br>" . $aux->fechaOriginal . "---");
-			
 			$arr=explode(" ", $aux->fechaOriginal);
 			$dFecha = explode("-", $arr[0]);
 			$anio=$dFecha[0]; 
@@ -151,6 +149,8 @@ class Apuesta
 			//print_r ($dHora);
 			
 			$final=mktime($hora, 0, 0, $mes, $dia, $anio);			
+			/*
+			echo ("<br>" . $aux->fechaOriginal . "---");
 			echo time();
 			echo " - ";
 			echo $final;
@@ -158,6 +158,7 @@ class Apuesta
 			echo $final-time();
 			echo " - ";
 			echo ($final-time()) / 3600;
+			*/
 			
 			$fechaAnterior=$sysController->formatShortDate($aux->fechaOriginal);			
 			$this->partidos[]=$aux;

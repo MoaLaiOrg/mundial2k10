@@ -106,7 +106,7 @@ class ApuestaCtr
 		//$apuesta->modPuntos=" style='display:none' ";
 		
 		//tbEstado check
-		if ($apuesta->tbEstado=="C"){
+		if ($apuesta->tbEstado!="A"){
 		
 			$apuesta->modApuestaAbierta=" style='display:none' ";
 			$sysController->msg="<h1>Apuesta - Bienvenido " . $apuesta->username . "!!</h1><br>

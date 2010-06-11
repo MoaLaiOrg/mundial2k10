@@ -33,8 +33,6 @@
 
 <body class="homepage">
 	<div id="header" class="<?php if($sysController->idApp=="epson"){echo "epson";}?>">
-		<p>
-		</p>
 	</div>
 	<div id="menu">
 		<ul>
