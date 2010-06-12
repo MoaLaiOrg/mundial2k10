@@ -56,7 +56,7 @@ class Apuesta
 			$anio=$dFecha[0]; $mes=$dFecha[1]; $dia=$dFecha[2]; $hora=$dHora[0]; $minutos=$dHora[1];
 
 			$final=mktime($hora, 0, 0, $mes, $dia, $anio);
-			$horasTo=($final-time()) / 3600;
+			$horasTo=($final-time()-1800) / 3600;
 			//echo ("<br>" . $horasTo);		
 			if ($horasTo<0)
 				continue;			
@@ -166,7 +166,7 @@ class Apuesta
 			//print_r ($dHora);
 			
 			$final=mktime($hora, 0, 0, $mes, $dia, $anio);
-			$horasTo=($final-time()) / 3600;
+			$horasTo=($final-time()-1800) / 3600;
 			//echo ("<br>" . $horasTo);
 
 			if ($horasTo<0){$aux->modPartidoAbierto=" style='display:none' ";}			
