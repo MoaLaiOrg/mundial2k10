@@ -2,10 +2,10 @@
 -- version 2.11.9.3
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 11-06-2010 a las 10:18:56
--- Versión del servidor: 5.1.41
--- Versión de PHP: 5.1.2
+-- Host: localhost
+-- Generation Time: Jun 12, 2010 at 01:58 AM
+-- Server version: 5.1.41
+-- PHP Version: 5.1.2
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -16,13 +16,13 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `wi720494_mundial2k10`
+-- Database: `wi720494_mundial2k10`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `apuesta`
+-- Table structure for table `apuesta`
 --
 
 DROP TABLE IF EXISTS `apuesta`;
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `apuesta` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=270 ;
 
 --
--- Volcar la base de datos para la tabla `apuesta`
+-- Dumping data for table `apuesta`
 --
 
 INSERT INTO `apuesta` (`idApuesta`, `fecha`, `idUsuario`, `tbEstado`) VALUES
@@ -103,7 +103,7 @@ INSERT INTO `apuesta` (`idApuesta`, `fecha`, `idUsuario`, `tbEstado`) VALUES
 (88, '0000-00-00 00:00:00', 92, 'C'),
 (89, '0000-00-00 00:00:00', 93, 'C'),
 (90, '0000-00-00 00:00:00', 94, 'C'),
-(91, '0000-00-00 00:00:00', 95, 'P'),
+(91, '0000-00-00 00:00:00', 95, 'A'),
 (92, '0000-00-00 00:00:00', 96, 'C'),
 (93, '0000-00-00 00:00:00', 97, 'C'),
 (94, '0000-00-00 00:00:00', 98, 'C'),
@@ -286,7 +286,7 @@ INSERT INTO `apuesta` (`idApuesta`, `fecha`, `idUsuario`, `tbEstado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `apuestadetalle`
+-- Table structure for table `apuestadetalle`
 --
 
 DROP TABLE IF EXISTS `apuestadetalle`;
@@ -300,7 +300,7 @@ CREATE TABLE IF NOT EXISTS `apuestadetalle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `apuestadetalle`
+-- Dumping data for table `apuestadetalle`
 --
 
 INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEquipo2`) VALUES
@@ -882,7 +882,7 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (38, 48, 2, 0),
 (39, 1, 2, 2),
 (39, 2, 1, 3),
-(39, 3, 2, 2),
+(39, 3, 3, 1),
 (39, 4, 1, 0),
 (39, 5, 2, 0),
 (39, 6, 0, 1),
@@ -924,58 +924,58 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (39, 42, 2, 1),
 (39, 43, 3, 0),
 (39, 44, 1, 1),
-(39, 45, 1, 2),
+(39, 45, 1, 3),
 (39, 46, 2, 1),
 (39, 47, 3, 2),
 (39, 48, 1, 1),
 (40, 1, 1, 1),
 (40, 2, 1, 1),
-(40, 3, 1, 1),
+(40, 3, 3, 1),
 (40, 4, 1, 1),
-(40, 5, 1, 1),
+(40, 5, 0, 0),
 (40, 6, 1, 1),
-(40, 7, 1, 1),
-(40, 8, 1, 11),
+(40, 7, 2, 1),
+(40, 8, 1, 4),
 (40, 9, 1, 1),
 (40, 10, 1, 1),
-(40, 11, 1, 1),
-(40, 12, 1, 1),
-(40, 13, 1, 1),
-(40, 14, 1, 1),
-(40, 15, 1, 1),
-(40, 16, 1, 1),
-(40, 17, 1, 1),
-(40, 18, 1, 1),
-(40, 19, 1, 1),
-(40, 20, 1, 1),
-(40, 21, 1, 1),
-(40, 22, 1, 1),
-(40, 23, 1, 1),
-(40, 24, 1, 1),
+(40, 11, 4, 1),
+(40, 12, 1, 0),
+(40, 13, 1, 4),
+(40, 14, 5, 1),
+(40, 15, 0, 1),
+(40, 16, 3, 1),
+(40, 17, 0, 1),
+(40, 18, 3, 1),
+(40, 19, 1, 0),
+(40, 20, 1, 0),
+(40, 21, 4, 0),
+(40, 22, 1, 2),
+(40, 23, 4, 0),
+(40, 24, 0, 2),
 (40, 25, 1, 1),
-(40, 26, 1, 1),
-(40, 27, 1, 1),
-(40, 28, 1, 1),
-(40, 29, 1, 1),
+(40, 26, 0, 1),
+(40, 27, 2, 2),
+(40, 28, 2, 1),
+(40, 29, 3, 0),
 (40, 30, 1, 1),
 (40, 31, 1, 1),
 (40, 32, 1, 1),
-(40, 33, 1, 1),
-(40, 34, 1, 1),
+(40, 33, 0, 0),
+(40, 34, 3, 0),
 (40, 35, 1, 1),
-(40, 36, 1, 1),
-(40, 37, 1, 1),
-(40, 38, 1, 1),
-(40, 39, 1, 1),
-(40, 40, 11, 1),
-(40, 41, 1, 1),
-(40, 42, 1, 1),
-(40, 43, 1, 1),
+(40, 36, 1, 2),
+(40, 37, 0, 3),
+(40, 38, 1, 0),
+(40, 39, 0, 3),
+(40, 40, 2, 1),
+(40, 41, 0, 2),
+(40, 42, 2, 1),
+(40, 43, 1, 2),
 (40, 44, 1, 1),
-(40, 45, 11, 1),
+(40, 45, 2, 3),
 (40, 46, 1, 1),
-(40, 47, 1, 1),
-(40, 48, 1, 1),
+(40, 47, 1, 3),
+(40, 48, 2, 1),
 (41, 1, 2, 2),
 (41, 2, 0, 2),
 (41, 3, 1, 0),
@@ -1026,15 +1026,15 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (41, 48, 1, 0),
 (42, 1, 1, 2),
 (42, 2, 1, 1),
-(42, 3, 1, 0),
+(42, 3, 2, 0),
 (42, 4, 1, 1),
-(42, 5, 2, 0),
+(42, 5, 2, 1),
 (42, 6, 0, 0),
 (42, 7, 3, 2),
 (42, 8, 2, 1),
 (42, 9, 3, 0),
 (42, 10, 1, 0),
-(42, 11, 2, 1),
+(42, 11, 1, 2),
 (42, 12, 1, 1),
 (42, 13, 0, 2),
 (42, 14, 3, 0),
@@ -1069,8 +1069,8 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (42, 43, 2, 0),
 (42, 44, 1, 2),
 (42, 45, 2, 3),
-(42, 46, 1, 0),
-(42, 47, 1, 1),
+(42, 46, 0, 1),
+(42, 47, 1, 2),
 (42, 48, 2, 0),
 (43, 1, 1, 2),
 (43, 2, 1, 1),
@@ -3328,54 +3328,54 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (90, 46, 1, 1),
 (90, 47, 1, 3),
 (90, 48, 1, 1),
-(91, 1, NULL, NULL),
-(91, 2, NULL, NULL),
-(91, 3, NULL, NULL),
-(91, 4, NULL, NULL),
-(91, 5, NULL, NULL),
-(91, 6, NULL, NULL),
-(91, 7, NULL, NULL),
-(91, 8, NULL, NULL),
-(91, 9, NULL, NULL),
-(91, 10, NULL, NULL),
-(91, 11, NULL, NULL),
-(91, 12, NULL, NULL),
-(91, 13, NULL, NULL),
-(91, 14, NULL, NULL),
-(91, 15, NULL, NULL),
-(91, 16, NULL, NULL),
-(91, 17, NULL, NULL),
-(91, 18, NULL, NULL),
-(91, 19, NULL, NULL),
-(91, 20, NULL, NULL),
-(91, 21, NULL, NULL),
-(91, 22, NULL, NULL),
-(91, 23, NULL, NULL),
-(91, 24, NULL, NULL),
-(91, 25, NULL, NULL),
-(91, 26, NULL, NULL),
-(91, 27, NULL, NULL),
-(91, 28, NULL, NULL),
-(91, 29, NULL, NULL),
-(91, 30, NULL, NULL),
-(91, 31, NULL, NULL),
-(91, 32, NULL, NULL),
-(91, 33, NULL, NULL),
-(91, 34, NULL, NULL),
-(91, 35, NULL, NULL),
-(91, 36, NULL, NULL),
-(91, 37, NULL, NULL),
-(91, 38, NULL, NULL),
-(91, 39, NULL, NULL),
-(91, 40, NULL, NULL),
-(91, 41, NULL, NULL),
-(91, 42, NULL, NULL),
-(91, 43, NULL, NULL),
-(91, 44, NULL, NULL),
-(91, 45, NULL, NULL),
-(91, 46, NULL, NULL),
-(91, 47, NULL, NULL),
-(91, 48, NULL, NULL),
+(91, 1, 1, 1),
+(91, 2, 1, 1),
+(91, 3, 1, 1),
+(91, 4, 1, 1),
+(91, 5, 1, 1),
+(91, 6, 1, 1),
+(91, 7, 1, 1),
+(91, 8, 1, 1),
+(91, 9, 1, 1),
+(91, 10, 1, 1),
+(91, 11, 1, 1),
+(91, 12, 1, 1),
+(91, 13, 1, 1),
+(91, 14, 1, 1),
+(91, 15, 1, 1),
+(91, 16, 1, 1),
+(91, 17, 1, 1),
+(91, 18, 1, 1),
+(91, 19, 1, 1),
+(91, 20, 1, 1),
+(91, 21, 1, 1),
+(91, 22, 1, 1),
+(91, 23, 1, 1),
+(91, 24, 1, 1),
+(91, 25, 1, 1),
+(91, 26, 1, 1),
+(91, 27, 1, 1),
+(91, 28, 1, 1),
+(91, 29, 1, 1),
+(91, 30, 1, 1),
+(91, 31, 1, 1),
+(91, 32, 1, 1),
+(91, 33, 1, 1),
+(91, 34, 1, 1),
+(91, 35, 1, 1),
+(91, 36, 1, 1),
+(91, 37, 1, 1),
+(91, 38, 1, 1),
+(91, 39, 1, 1),
+(91, 40, 1, 1),
+(91, 41, 1, 1),
+(91, 42, 1, 1),
+(91, 43, 1, 1),
+(91, 44, 1, 1),
+(91, 45, 1, 1),
+(91, 46, 1, 1),
+(91, 47, 1, 1),
+(91, 48, 1, 1),
 (92, 1, 1, 1),
 (92, 2, 0, 0),
 (92, 3, 2, 0),
@@ -3392,8 +3392,7 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (92, 14, 4, 0),
 (92, 15, 0, 2),
 (92, 16, 2, 1),
-(92, 17, 1, 2);
-INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEquipo2`) VALUES
+(92, 17, 1, 2),
 (92, 18, 2, 2),
 (92, 19, 1, 2),
 (92, 20, 4, 1),
@@ -3414,7 +3413,8 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (92, 35, 1, 0),
 (92, 36, 1, 3),
 (92, 37, 0, 3),
-(92, 38, 2, 0),
+(92, 38, 2, 0);
+INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEquipo2`) VALUES
 (92, 39, 1, 2),
 (92, 40, 1, 1),
 (92, 41, 1, 3),
@@ -6149,8 +6149,7 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (149, 34, NULL, NULL),
 (149, 35, NULL, NULL),
 (149, 36, NULL, NULL),
-(149, 37, NULL, NULL);
-INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEquipo2`) VALUES
+(149, 37, NULL, NULL),
 (149, 38, NULL, NULL),
 (149, 39, NULL, NULL),
 (149, 40, NULL, NULL),
@@ -6166,7 +6165,8 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (150, 2, 0, 2),
 (150, 3, 2, 0),
 (150, 4, 4, 1),
-(150, 5, 3, 1),
+(150, 5, 3, 1);
+INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEquipo2`) VALUES
 (150, 6, 0, 1),
 (150, 7, 4, 1),
 (150, 8, 0, 4),
@@ -8374,7 +8374,7 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (196, 2, 0, 3),
 (196, 3, 3, 2),
 (196, 4, 1, 2),
-(196, 5, 4, 1),
+(196, 5, 2, 1),
 (196, 6, 2, 3),
 (196, 7, 4, 2),
 (196, 8, 1, 2),
@@ -8385,7 +8385,7 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (196, 13, 2, 0),
 (196, 14, 1, 0),
 (196, 15, 2, 3),
-(196, 16, 2, 6),
+(196, 16, 1, 3),
 (196, 17, 1, 2),
 (196, 18, 3, 1),
 (196, 19, 1, 2),
@@ -8977,8 +8977,7 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (208, 29, 2, 1),
 (208, 30, 3, 0),
 (208, 31, 2, 2),
-(208, 32, 5, 0);
-INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEquipo2`) VALUES
+(208, 32, 5, 0),
 (208, 33, 3, 3),
 (208, 34, 1, 0),
 (208, 35, 1, 1),
@@ -8999,7 +8998,8 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (209, 2, 2, 1),
 (209, 3, 2, 1),
 (209, 4, 0, 1),
-(209, 5, 2, 0),
+(209, 5, 2, 0);
+INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEquipo2`) VALUES
 (209, 6, 2, 0),
 (209, 7, 1, 2),
 (209, 8, 1, 0),
@@ -11629,8 +11629,7 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (263, 40, NULL, NULL),
 (263, 41, NULL, NULL),
 (263, 42, NULL, NULL),
-(263, 43, NULL, NULL);
-INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEquipo2`) VALUES
+(263, 43, NULL, NULL),
 (263, 44, NULL, NULL),
 (263, 45, NULL, NULL),
 (263, 46, NULL, NULL),
@@ -11645,7 +11644,8 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 (264, 7, NULL, NULL),
 (264, 8, NULL, NULL),
 (264, 9, NULL, NULL),
-(264, 10, NULL, NULL),
+(264, 10, NULL, NULL);
+INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEquipo2`) VALUES
 (264, 11, NULL, NULL),
 (264, 12, NULL, NULL),
 (264, 13, NULL, NULL),
@@ -11928,7 +11928,7 @@ INSERT INTO `apuestadetalle` (`idApuesta`, `idPartido`, `golesEquipo1`, `golesEq
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `equipo`
+-- Table structure for table `equipo`
 --
 
 DROP TABLE IF EXISTS `equipo`;
@@ -11939,7 +11939,7 @@ CREATE TABLE IF NOT EXISTS `equipo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `equipo`
+-- Dumping data for table `equipo`
 --
 
 INSERT INTO `equipo` (`nombre`, `idEquipo`) VALUES
@@ -11979,7 +11979,7 @@ INSERT INTO `equipo` (`nombre`, `idEquipo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `partido`
+-- Table structure for table `partido`
 --
 
 DROP TABLE IF EXISTS `partido`;
@@ -12005,12 +12005,12 @@ CREATE TABLE IF NOT EXISTS `partido` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcar la base de datos para la tabla `partido`
+-- Dumping data for table `partido`
 --
 
 INSERT INTO `partido` (`fecha`, `tbEvento`, `idEquipo1`, `idEquipo2`, `golesEquipo1`, `golesEquipo2`, `mkBazan`, `mkCoke`, `mkVieja`, `mkMotoraton`, `mkExcellent`, `mkAmargo`, `mkUsa`, `mkHyena`, `idGrupo`, `idPartido`, `mkTriste`) VALUES
-('2010-06-11 11:00:00', NULL, 'za', 'mx', NULL, NULL, 0, 1, 0, 0, 0, 0, NULL, 0, 'A', 1, 0),
-('2010-06-11 15:30:00', NULL, 'uy', 'fr', NULL, NULL, 1, 0, 0, 0, 0, 0, NULL, 0, 'A', 2, 0),
+('2010-06-11 11:00:00', NULL, 'za', 'mx', 1, 1, 0, 1, 0, 0, 0, 0, NULL, 0, 'A', 1, 0),
+('2010-06-11 15:30:00', NULL, 'uy', 'fr', 0, 0, 1, 0, 0, 0, 0, 0, NULL, 0, 'A', 2, 0),
 ('2010-06-12 11:00:00', NULL, 'ar', 'ng', NULL, NULL, 1, 0, 0, 0, 0, 0, NULL, 0, 'B', 3, 1),
 ('2010-06-12 08:30:00', NULL, 'ko', 'gr', NULL, NULL, 0, 1, 0, 0, 0, 0, NULL, 0, 'B', 4, 0),
 ('2010-06-12 15:30:00', NULL, 'uk', 'us', NULL, NULL, 0, 0, 0, 0, 0, 1, NULL, 0, 'C', 5, 0),
@@ -12061,7 +12061,7 @@ INSERT INTO `partido` (`fecha`, `tbEvento`, `idEquipo1`, `idEquipo2`, `golesEqui
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 DROP TABLE IF EXISTS `usuario`;
@@ -12080,7 +12080,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=274 ;
 
 --
--- Volcar la base de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `fechaIngreso`, `password`, `idEgel`, `idEquipo`, `apodoEquipo`, `hash`, `idApp`) VALUES
@@ -12330,7 +12330,7 @@ INSERT INTO `usuario` (`idUsuario`, `nombre`, `fechaIngreso`, `password`, `idEge
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `vwapuestadetallepuntos`
+-- Stand-in structure for view `vwapuestadetallepuntos`
 --
 DROP VIEW IF EXISTS `vwapuestadetallepuntos`;
 CREATE TABLE IF NOT EXISTS `vwapuestadetallepuntos` (
@@ -12361,7 +12361,7 @@ CREATE TABLE IF NOT EXISTS `vwapuestadetallepuntos` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `vwapuestadetallepuntosbase`
+-- Stand-in structure for view `vwapuestadetallepuntosbase`
 --
 DROP VIEW IF EXISTS `vwapuestadetallepuntosbase`;
 CREATE TABLE IF NOT EXISTS `vwapuestadetallepuntosbase` (
@@ -12376,7 +12376,7 @@ CREATE TABLE IF NOT EXISTS `vwapuestadetallepuntosbase` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `vwapuestadetallepuntospower`
+-- Stand-in structure for view `vwapuestadetallepuntospower`
 --
 DROP VIEW IF EXISTS `vwapuestadetallepuntospower`;
 CREATE TABLE IF NOT EXISTS `vwapuestadetallepuntospower` (
@@ -12390,20 +12390,20 @@ CREATE TABLE IF NOT EXISTS `vwapuestadetallepuntospower` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `vwranking`
+-- Stand-in structure for view `vwranking`
 --
 DROP VIEW IF EXISTS `vwranking`;
 CREATE TABLE IF NOT EXISTS `vwranking` (
-`idApuesta` int(10) unsigned
-,`idUsuario` int(10) unsigned
+`idapuesta` int(10) unsigned
+,`idusuario` int(10) unsigned
 ,`nombre` varchar(45)
-,`idApp` varchar(10)
-,`total` decimal(32,0)
+,`idapp` varchar(10)
+,`total` decimal(41,0)
 );
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `vwtest`
+-- Stand-in structure for view `vwtest`
 --
 DROP VIEW IF EXISTS `vwtest`;
 CREATE TABLE IF NOT EXISTS `vwtest` (
@@ -12417,7 +12417,7 @@ CREATE TABLE IF NOT EXISTS `vwtest` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `vwusuario`
+-- Stand-in structure for view `vwusuario`
 --
 DROP VIEW IF EXISTS `vwusuario`;
 CREATE TABLE IF NOT EXISTS `vwusuario` (
@@ -12431,7 +12431,7 @@ CREATE TABLE IF NOT EXISTS `vwusuario` (
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `vwapuestadetallepuntos`
+-- Structure for view `vwapuestadetallepuntos`
 --
 DROP TABLE IF EXISTS `vwapuestadetallepuntos`;
 
@@ -12440,7 +12440,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`wi720494`@`%` SQL SECURITY DEFINER VIEW `wi7
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `vwapuestadetallepuntosbase`
+-- Structure for view `vwapuestadetallepuntosbase`
 --
 DROP TABLE IF EXISTS `vwapuestadetallepuntosbase`;
 
@@ -12449,7 +12449,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`wi720494`@`%` SQL SECURITY DEFINER VIEW `wi7
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `vwapuestadetallepuntospower`
+-- Structure for view `vwapuestadetallepuntospower`
 --
 DROP TABLE IF EXISTS `vwapuestadetallepuntospower`;
 
@@ -12458,16 +12458,16 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`wi720494`@`%` SQL SECURITY DEFINER VIEW `wi7
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `vwranking`
+-- Structure for view `vwranking`
 --
 DROP TABLE IF EXISTS `vwranking`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`wi720494`@`%` SQL SECURITY DEFINER VIEW `wi720494_mundial2k10`.`vwranking` AS select `adp`.`idApuesta` AS `idApuesta`,`u`.`idUsuario` AS `idUsuario`,`u`.`nombre` AS `nombre`,`u`.`idApp` AS `idApp`,sum(`adp`.`puntos`) AS `total` from ((`wi720494_mundial2k10`.`vwapuestadetallepuntos` `adp` join `wi720494_mundial2k10`.`apuesta` `a` on((`a`.`idApuesta` = `adp`.`idApuesta`))) join `wi720494_mundial2k10`.`usuario` `u` on((`u`.`idUsuario` = `a`.`idUsuario`))) group by `adp`.`idApuesta` order by sum(`adp`.`puntos`) desc;
+CREATE ALGORITHM=UNDEFINED DEFINER=`wi720494`@`%` SQL SECURITY DEFINER VIEW `wi720494_mundial2k10`.`vwranking` AS select `adp`.`idApuesta` AS `idapuesta`,`u`.`idUsuario` AS `idusuario`,`u`.`nombre` AS `nombre`,`u`.`idApp` AS `idapp`,sum(`adp`.`puntosPower`) AS `total` from ((`wi720494_mundial2k10`.`vwapuestadetallepuntos` `adp` join `wi720494_mundial2k10`.`apuesta` `a` on(((`a`.`idApuesta` = `adp`.`idApuesta`) and (`a`.`tbEstado` in ('C','A'))))) join `wi720494_mundial2k10`.`usuario` `u` on((`u`.`idUsuario` = `a`.`idUsuario`))) group by `adp`.`idApuesta` order by sum(`adp`.`puntosPower`) desc;
 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `vwtest`
+-- Structure for view `vwtest`
 --
 DROP TABLE IF EXISTS `vwtest`;
 
@@ -12476,24 +12476,24 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`wi720494`@`%` SQL SECURITY DEFINER VIEW `wi7
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `vwusuario`
+-- Structure for view `vwusuario`
 --
 DROP TABLE IF EXISTS `vwusuario`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`wi720494`@`%` SQL SECURITY DEFINER VIEW `wi720494_mundial2k10`.`vwusuario` AS select `u`.`idUsuario` AS `idUsuario`,`u`.`nombre` AS `nombre`,`u`.`fechaIngreso` AS `fechaIngreso`,`u`.`hash` AS `hash`,`a`.`tbEstado` AS `tbEstado`,`u`.`idApp` AS `idApp` from (`wi720494_mundial2k10`.`usuario` `u` join `wi720494_mundial2k10`.`apuesta` `a` on((`u`.`idUsuario` = `a`.`idUsuario`)));
 
 --
--- Filtros para las tablas descargadas (dump)
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `apuesta`
+-- Constraints for table `apuesta`
 --
 ALTER TABLE `apuesta`
   ADD CONSTRAINT `usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `apuestadetalle`
+-- Constraints for table `apuestadetalle`
 --
 ALTER TABLE `apuestadetalle`
   ADD CONSTRAINT `FK_apuestadetalle_1` FOREIGN KEY (`idApuesta`) REFERENCES `apuesta` (`idApuesta`) ON DELETE CASCADE ON UPDATE CASCADE;
