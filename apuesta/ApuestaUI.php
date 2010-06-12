@@ -26,8 +26,6 @@ class ApuestaUi
 		
 			<div style="display:none" id="controlDiv">
 				<input name="do" value="save">
-				<input name="idApuesta" value="<?php echo $this->data->idApuesta?>">
-				<input name="hash" value="<?php echo $this->data->hash?>">
 			</div>
 
 			<table id="tblApuesta" cellpadding="2" cellspacing="0" border="0">
@@ -62,9 +60,9 @@ class ApuestaUi
 						
 						<td class="tdGoles" <?php echo $this->data->modFixture?>>
 							<input class='inputGoles' name='golesEquipo1[<?php echo $partido->idPartido?>]' 
-								value='<?php echo $partido->golesEquipo1?>' <?php echo $this->data->modApuestaAbierta?>>
+								value='<?php echo $partido->golesEquipo1?>' <?php echo $partido->modPartidoAbierto?>>
 							</input>
-							<span <?php echo $this->data->modApuestaCerrada?>>
+							<span <?php echo $partido->modPartidoCerrado?>>
 								<?php echo $partido->golesEquipo1?>
 							</span>
 						</td>
@@ -83,9 +81,9 @@ class ApuestaUi
 						
 						<td class="tdGoles" <?php echo $this->data->modFixture?>>
 							<input class='inputGoles' name='golesEquipo2[<?php echo $partido->idPartido?>]' 
-								value='<?php echo $partido->golesEquipo2?>' <?php echo $this->data->modApuestaAbierta?>>
+								value='<?php echo $partido->golesEquipo2?>' <?php echo $partido->modPartidoAbierto?>>
 							</input>
-							<span <?php echo $this->data->modApuestaCerrada?>>
+							<span <?php echo $partido->modPartidoCerrado?>>
 								<?php echo $partido->golesEquipo2?>
 							</span>								
 						</td>
@@ -131,7 +129,7 @@ class ApuestaUi
 				<tr <?php echo $this->data->modFixture?>>
 					<td colspan='9' style='border-top:1px solid silver; text-align:right;'>
 						<input id="btnSave" class="btnSave" type="button" 
-						value="Guardar Apuesta" <?php echo $this->data->modApuestaAbierta?>>
+						value="Guardar Apuesta" <?php echo $this->data->_modApuestaAbierta?>>
 					</td>
 				</tr>
 			</table>

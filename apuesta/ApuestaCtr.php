@@ -100,10 +100,7 @@ class ApuestaCtr
 		$sysController->idApp=$user->idApp;
 		
 		$apuesta=new Apuesta();
-		//$apuesta->hash=$hash;
 		$apuesta->loadByUsername($user->username);
-		//$apuesta->modResultadoFinal=" style='display:none' ";
-		//$apuesta->modPuntos=" style='display:none' ";
 		
 		//tbEstado check
 		if ($apuesta->tbEstado!="A"){
@@ -190,9 +187,9 @@ class ApuestaCtr
 		}
 		
 		//echo "<br>" . $apuesta->tbEstado;
-		if ($apuesta->tbEstado=="A"){ //control de closed
+		//if ($apuesta->tbEstado=="A"){ //control de closed
 			$res=$apuesta->save($arrParam);
-		}
+		//}
 		
 		$this->editApuesta(); //esto pq no tengo sysMessage de session
 
