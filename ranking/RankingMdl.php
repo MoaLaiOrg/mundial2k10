@@ -37,12 +37,16 @@ class Ranking
 		$result=mysql_query($query) or die(mysql_error());
 		$num=mysql_numrows($result);
 		
-		$i=0; $totalAnterior=""; $order=1;
+		$i=0; 
+		$totalAnterior=mysql_result($result, 0, "total");; 
+		$order=1;
 		while ($i < $num) {
 			
 			$aux=new RankingUser(); 
 			$aux->username=mysql_result($result, $i, "nombre");			
 			$aux->total=mysql_result($result, $i, "total");
+			
+			if ($totalAnterior!=$aux->total){$order=$order+1;}
 			$aux->order=$order;
 			
 			if ($aux->order==1){$aux->img="<img src='imgs/rank1.gif'/>"; }
@@ -51,8 +55,7 @@ class Ranking
 			
 			$this->list[]=$aux;			
 			$i++;
-
-			if ($totalAnterior!=$aux->total){$order=$order+1;}
+			
 			$totalAnterior=$aux->total;
 		}
 		
