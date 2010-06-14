@@ -143,7 +143,7 @@ class Apuesta
 				$aux->puntos="-";
 			
 			if ($fechaAnterior!=$sysController->formatShortDate($aux->fechaOriginal)){
-				$aux->modNuevaFecha="<tr><td colspan='9' style='border-top:1px solid silver;'>&nbsp;</td></tr>";
+				$aux->modNuevaFecha="<tr><td colspan='10' style='border-top:1px solid silver;'>&nbsp;</td></tr>";
 			}
 
 			//echo ("<br>" . $aux->getMinutesLeft());
@@ -223,8 +223,27 @@ class ApuestaItem
 		$minutos=$dHora[1];
 		
 		$final=mktime($hora, 0, 0, $mes, $dia, $anio);
-		$minutosToClose=($final-time()-3600) / 60;
+		$minutosToClose=round(($final-time()-3600) / 60);
+
 		return $minutosToClose;
+	}
+	
+	//---------------
+
+	function getHoursLeft(){
+
+		if ($this->getMinutesLeft()<0)
+			$aux="out";
+			
+		if ($this->getMinutesLeft()>0 && $this->getMinutesLeft()<600) {
+			$aux=floor($this->getMinutesLeft() / 60) . "h " . ($aux=$this->getMinutesLeft() % 60) . "m";
+			$aux="<b><span style='color:red'>$aux</span></b>";
+		}
+			
+		if ($this->getMinutesLeft()>600)
+			$aux="far";
+
+		return $aux;
 	}
 }
 ?>

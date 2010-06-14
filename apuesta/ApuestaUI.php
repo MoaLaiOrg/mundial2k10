@@ -39,6 +39,7 @@ class ApuestaUi
 					<td class="tdGoles" <?php echo $this->data->modFixture?>>apuesta</td>
 					<td class="equipo"></td>
 					<td class="powerUps"><b>PowerUps</b> (ver al pie)</td>
+					<td class="cierraEn">Cierra en</td>
 				</tr>
 
 				<?php foreach ($this->data->partidos as $partido){?>
@@ -121,7 +122,11 @@ class ApuestaUi
 							<?php if ($partido->mkTriste>=1){?>
 								<img class="powerUp" src="imgs/triste.gif" title="TRISTE: Apuesta a empate 0 a 0, si acierta suma cinco puntos extras (+5)"></img>
 							<?php }?>
-						</td>					
+						</td>
+						
+						<td class="cierraEn">
+							<?php echo $partido->getHoursLeft()?>							
+						</td>
 					</tr>					
 				<?php
 				}

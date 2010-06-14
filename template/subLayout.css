@@ -22,6 +22,11 @@
 	font-weight:bold;	
 }
 
+.cierraEn{
+	background-color:#F7E16D;
+	color:black;
+}
+
 .fecha{
 	width:120px;
 	color: #11ABDD;
@@ -37,7 +42,7 @@
 }
 
 .powerUps{
-	width:150px;
+	width:100px;
 	border:0px solid blue;
 }
 
@@ -57,7 +62,7 @@
 }
 
 #tblApuesta{
-	width:650px;
+	width:700px;
 	margin-left:auto;
 	margin-right:auto;
 	text-align:left;
