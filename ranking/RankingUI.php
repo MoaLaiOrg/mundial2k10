@@ -22,7 +22,7 @@ class RankingUi
 			<?php echo $sysController->msg?>
 		</div>
 		
-		<span id="external" class="mp3">stars.mp3</span>
+		<span id="external" class="mp3">jump.mp3</span>
 		
 		<table id="tblUsers" cellpadding=3 cellspacing=0>
 			

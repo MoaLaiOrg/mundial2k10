@@ -235,12 +235,12 @@ class ApuestaItem
 		if ($this->getMinutesLeft()<0)
 			$aux="out";
 			
-		if ($this->getMinutesLeft()>0 && $this->getMinutesLeft()<600) {
+		if ($this->getMinutesLeft()>0 && $this->getMinutesLeft()<1440) {
 			$aux=floor($this->getMinutesLeft() / 60) . "h " . ($aux=$this->getMinutesLeft() % 60) . "m";
 			$aux="<b><span style='color:red'>$aux</span></b>";
 		}
 			
-		if ($this->getMinutesLeft()>600)
+		if ($this->getMinutesLeft()>1440)
 			$aux="far";
 
 		return $aux;
