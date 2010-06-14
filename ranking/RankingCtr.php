@@ -43,7 +43,7 @@ class RankingCtr
 		$sysController->idApp=$user->idApp;
 
 		if ($do=="show")
-			$this->show($idApp);
+			$this->show($sysController->idApp);
 
 	}
 

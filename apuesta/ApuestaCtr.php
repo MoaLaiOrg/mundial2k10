@@ -2,6 +2,7 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/apuesta/ApuestaMdl.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/apuesta/ApuestaUI.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/apuesta/ApuestaViewUI.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/system/GenericUI.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/apuesta/UserMdl.php');
 
@@ -141,14 +142,21 @@ class ApuestaCtr
 				
 		$sysController->idApp=$user->idApp;
 		
+		//load
+		if (isset($_GET["username"])){
+			$username=$_GET["username"];
+		} else {
+			echo "<br>username?";
+			exit(); 
+		}
+		
 		$apuesta=new Apuesta();
-		$apuesta->loadByUsername($user->username);
-		$apuesta->modApuestaAbierta=" style='display:none' ";
+		$apuesta->loadByUsername($username);
+		$apuesta->protectView();
 
-		$sysController->msg="<h1>Apuesta - Bienvenido " . $apuesta->username . "!!</h1><br>
-								Una vez que guardes la apuesta no podes modificarla. El torneo empieza un dia antes del mundial. En ese momento va a publicar el ranking.";
+		$sysController->msg="<h1>Apuesta de " . $apuesta->username . "!!</h1><br>";
 
-		$ui=new ApuestaUI();
+		$ui=new ApuestaViewUI();
 		$ui->data=$apuesta;
 		$sysController->ui=$ui;
 

@@ -47,18 +47,12 @@ class Apuesta
 			
 			//chektime
 			$sql="select * from partido where idPartido=$idPartido";
-			//echo "<br>" . $sql;
 			$result=mysql_query($sql);
 			
-			$arr=explode(" ", mysql_result($result, 0, "fecha"));
-			$dFecha = explode("-", $arr[0]);
-			$dHora = explode(":", $arr[1]);
-			$anio=$dFecha[0]; $mes=$dFecha[1]; $dia=$dFecha[2]; $hora=$dHora[0]; $minutos=$dHora[1];
-
-			$final=mktime($hora, 0, 0, $mes, $dia, $anio);
-			$horasTo=($final-time()-1800) / 3600;
-			//echo ("<br>" . $horasTo);		
-			if ($horasTo<0)
+			$aux=new ApuestaItem();			
+			$aux->fechaOriginal=mysql_result($result, 0, "fecha");
+			//echo ("<br>" . $aux->getMinutesLeft());
+			if ($aux->getMinutesLeft()<0)
 				continue;			
 
 			//save
@@ -99,7 +93,6 @@ class Apuesta
 		
 		//detalle
 		$query="select * from vwApuestaDetallePuntos where idApuesta=" 
-		//$query="select * from vwApuestaDetallePuntosSrc where idApuesta=" 
 			. $this->idApuesta  
 			//. " and (idEquipo1='br' or idEquipo2='br') "
 			. " order by fecha asc";
@@ -153,30 +146,33 @@ class Apuesta
 				$aux->modNuevaFecha="<tr><td colspan='9' style='border-top:1px solid silver;'>&nbsp;</td></tr>";
 			}
 
-			$arr=explode(" ", $aux->fechaOriginal);
-			$dFecha = explode("-", $arr[0]);
-			$anio=$dFecha[0]; 
-			$mes=$dFecha[1]; 
-			$dia=$dFecha[2];
-			
-			$dHora = explode(":", $arr[1]);
-			$hora=$dHora[0]; 
-			$minutos=$dHora[1];
-			
-			//print_r ($dHora);
-			
-			$final=mktime($hora, 0, 0, $mes, $dia, $anio);
-			$horasTo=($final-time()-1800) / 3600;
-			//echo ("<br>" . $horasTo);
-
-			if ($horasTo<0){$aux->modPartidoAbierto=" style='display:none' ";}			
-			if ($horasTo>0){$aux->modPartidoCerrado=" style='display:none' ";}
+			//echo ("<br>" . $aux->getMinutesLeft());
+			if ($aux->getMinutesLeft()<0){$aux->modPartidoAbierto=" style='display:none' ";}			
+			if ($aux->getMinutesLeft()>0){$aux->modPartidoCerrado=" style='display:none' ";}
 
 			$fechaAnterior=$sysController->formatShortDate($aux->fechaOriginal);			
 			$this->partidos[]=$aux;
 			$i++;
 		}
 	}	
+	
+	//----------------
+	
+	function protectView(){
+
+		global $sysController;
+		
+		foreach ($this->partidos as $partido) {
+
+			//print_r ("<br>" . $partido->getMinutesLeft());
+			if ($partido->getMinutesLeft()>0){
+				$partido->golesEquipo1="<b>x</b>";
+				$partido->golesEquipo2="<b>x</b>";
+			}
+
+		}
+	}
+	
 }
 
 //----------------
@@ -209,6 +205,26 @@ class ApuestaItem
 		$this->modNuevaFecha="";
 		$this->modPartidoCerrado="";
 		$this->modPartidoAbierto="";
+	}
+
+	//---------------
+
+	function getMinutesLeft(){
+
+		$arr=explode(" ", $this->fechaOriginal);
+		
+		$dFecha = explode("-", $arr[0]);
+		$anio=$dFecha[0]; 
+		$mes=$dFecha[1]; 
+		$dia=$dFecha[2];
+		
+		$dHora = explode(":", $arr[1]);
+		$hora=$dHora[0]; 
+		$minutos=$dHora[1];
+		
+		$final=mktime($hora, 0, 0, $mes, $dia, $anio);
+		$minutosToClose=($final-time()-3600) / 60;
+		return $minutosToClose;
 	}
 }
 ?>

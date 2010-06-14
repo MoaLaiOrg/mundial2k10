@@ -129,7 +129,7 @@ class ApuestaUi
 				<tr <?php echo $this->data->modFixture?>>
 					<td colspan='9' style='border-top:1px solid silver; text-align:right;'>
 						<input id="btnSave" class="btnSave" type="button" 
-						value="Guardar Apuesta" <?php echo $this->data->_modApuestaAbierta?>>
+						value="Guardar Apuesta">
 					</td>
 				</tr>
 			</table>
