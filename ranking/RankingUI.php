@@ -46,6 +46,9 @@ class RankingUi
 					<td style='border-bottom:0px solid silver' valign="bottom">
 						<a href='apuesta/?do=view&username=<?php echo $user->username?>'>[ver apuesta]</a>
 					</td>
+					<td style='border-bottom:0px solid silver' valign="bottom">
+						<?php echo $user->powerUps?>
+					</td>
 				<tr>	
 			<?php }?>
 
