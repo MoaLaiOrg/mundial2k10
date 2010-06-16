@@ -48,21 +48,25 @@ class Ranking
 			$aux->username=mysql_result($result, $i, "nombre");			
 			$aux->total=mysql_result($result, $i, "total");
 			
-			for ($j = 1; $j <= mysql_result($result, $i, "qCoke"); $j++) {
-				$aux->powerUps.="<img src='imgs/coke.gif'/>";
-			}		
-			for ($j = 1; $j <= mysql_result($result, $i, "qBazan"); $j++) {
-				$aux->powerUps.="<img src='imgs/bazanSmall.gif'/>";
+			for ($j = 1; $j <= mysql_result($result, $i, "qMotoraton"); $j++) {
+				$aux->powerUps.="&nbsp;<img src='imgs/smallPUps/motoraton.gif'/>";
 			}
 			for ($j = 1; $j <= mysql_result($result, $i, "qViejaBuena"); $j++) {
-				$aux->powerUps.="<img src='imgs/vieja.gif'/>";
+				$aux->powerUps.="&nbsp;<img src='imgs/smallPUps/vieja.gif'/>";
+			}
+			for ($j = 1; $j <= mysql_result($result, $i, "qCoke"); $j++) {
+				$aux->powerUps.="&nbsp;<img src='imgs/smallPUps/coke.gif'/>";
+			}
+			for ($j = 1; $j <= mysql_result($result, $i, "qTriste"); $j++) {
+				$aux->powerUps.="&nbsp;<img src='imgs/smallPUps/triste.gif'/>";
+			}
+			for ($j = 1; $j <= mysql_result($result, $i, "qBazan"); $j++) {
+				$aux->powerUps.="&nbsp;<img src='imgs/smallPUps/bazanSmall.gif'/>";
 			}
 			for ($j = 1; $j <= mysql_result($result, $i, "qViejaMala"); $j++) {
-				$aux->powerUps.="<img src='imgs/vieja.gif'/>";
+				$aux->powerUps.="&nbsp;<img src='imgs/smallPUps/viejaMala.gif'/>";
 			}
-			for ($j = 1; $j <= mysql_result($result, $i, "qMotoraton"); $j++) {
-				$aux->powerUps.="<img src='imgs/motoraton.gif'/>";
-			}
+			
 			/*
 			$aux->powerUps=mysql_result($result, $i, "qBazan")
 				. mysql_result($result, $i, "qCoke")

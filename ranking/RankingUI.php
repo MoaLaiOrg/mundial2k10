@@ -24,7 +24,7 @@ class RankingUi
 		
 		<span id="external" class="mp3">jump.mp3</span>
 		
-		<table id="tblUsers" cellpadding=3 cellspacing=0>
+		<table id="tblRank" cellpadding=3 cellspacing=0>
 			
 			<?php 
 			//print_r ($this->data["users"]->list);

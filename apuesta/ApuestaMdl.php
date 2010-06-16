@@ -222,8 +222,8 @@ class ApuestaItem
 		$hora=$dHora[0]; 
 		$minutos=$dHora[1];
 		
-		$final=mktime($hora, 0, 0, $mes, $dia, $anio);
-		$minutosToClose=round(($final-time()-3600) / 60);
+		$final=mktime($hora, $minutos, 0, $mes, $dia, $anio);
+		$minutosToClose=round(($final-time()-300) / 60);
 
 		return $minutosToClose;
 	}
