@@ -21,7 +21,7 @@ class RankingByYearUi
 			<?php echo $sysController->msg?>
 		</div>
 		
-		<!--span id="external" class="mp3">jump.mp3</span-->
+		<!--span id="rankingByYearMusic" class="mp3">fantasy.mp3</span-->
 		
 		<table id="tblRank" style="width:300px" cellpadding=3 cellspacing=0>
 			
