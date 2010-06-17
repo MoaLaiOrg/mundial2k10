@@ -5,6 +5,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/ranking/RankingMdl.
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/ranking/RankingUI.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/system/GenericUI.php');
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/ranking/RankingByYearMdl.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sites/mundial2k10/ranking/RankingByYearUI.php');
+
 class RankingCtr
 {
 
@@ -44,6 +47,9 @@ class RankingCtr
 
 		if ($do=="show")
 			$this->show($sysController->idApp);
+			
+		if ($do=="showByYear")
+			$this->showByYear($sysController->idApp);	
 
 	}
 
@@ -64,6 +70,26 @@ class RankingCtr
 		$ui->data["users"]=$users;
 		
 		$sysController->msg="<h1>Ranking</h1>";
+		$sysController->ui=$ui;
+
+	}
+	
+	//----------------
+	
+	function showByYear($idApp){
+	
+		//echo "<br>showPlayers";
+
+		global $sysController;
+		
+		//go
+		$users=new RankingByYear();
+		$users->load($sysController->idApp);
+		
+		$ui=new RankingByYearUI();	
+		$ui->data["users"]=$users;
+		
+		$sysController->msg="<h1>Fantasy Ranking</h1>";
 		$sysController->ui=$ui;
 
 	}

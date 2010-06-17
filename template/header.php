@@ -43,6 +43,9 @@
 				<li><a href="users/?do=showPlayers">Players</a></li>				
 			<?php }?>
 			<li><a href="ranking/?do=show">Ranking</a></li>
+			<?php if($sysController->idApp=="egel"){ ?>
+				<li><a href="ranking/?do=showByYear">Fantasy</a></li>
+			<?php }?>			
 		</ul>
 	</div>
 
