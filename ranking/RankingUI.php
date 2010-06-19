@@ -43,6 +43,12 @@ class RankingUi
 					<td class="tdPuntos" style='border-bottom:1px solid silver' valign="bottom">
 						<?php echo $user->total?>
 					</td>
+					<td class="tdPuntos" style='border-bottom:1px solid silver' valign="bottom">
+						<?php echo $user->mkposibleamargo?>
+					</td>
+					<td class="tdPuntos" style='border-bottom:1px solid silver' valign="bottom">
+						<?php echo $user->mkposibleexcellent?>
+					</td>
 					<td style='border-bottom:1px solid silver' valign="bottom">
 						<a href='apuesta/?do=view&username=<?php echo $user->username?>'>[ver apuesta]</a>
 					</td>

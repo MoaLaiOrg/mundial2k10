@@ -8,6 +8,8 @@ class RankingUser
 	public $order;
 	public $img;
 	public $powerUps;
+	public $mkposibleamargo;
+	public $mkposibleexcellent;
 		
 	function RankingUser(){
 		$this->username=null;
@@ -15,6 +17,8 @@ class RankingUser
 		$this->order=null;
 		$this->img="";
 		$this->powerUps="";
+		$this->mkposibleamargo="";
+		$this->mkposibleexcellent="";
 	}
 
 }	
@@ -46,6 +50,9 @@ class Ranking
 			
 			$aux=new RankingUser(); 
 			$aux->username=mysql_result($result, $i, "nombre");			
+			$aux->total=mysql_result($result, $i, "total");
+			$aux->mkposibleamargo=mysql_result($result, $i, "mkposibleamargo");
+			$aux->mkposibleexcellent=mysql_result($result, $i, "mkposibleexcellent");
 			$aux->total=mysql_result($result, $i, "total");
 			
 			for ($j = 1; $j <= mysql_result($result, $i, "qMotoraton"); $j++) {
@@ -89,7 +96,8 @@ class Ranking
 			if ($aux->order==2){$aux->img="<img src='imgs/rank2.gif'/>"; }
 			if ($aux->order==3){$aux->img="<img src='imgs/rank3.gif'/>"; }
 			
-			
+			if ($aux->mkposibleamargo==1){$aux->mkposibleamargo="<img src='imgs/amargo.gif'/>"; }else{$aux->mkposibleamargo="";}
+			if ($aux->mkposibleexcellent==1){$aux->mkposibleexcellent="<img src='imgs/excellent.gif'/>";}else{$aux->mkposibleexcellent="";}
 			
 			$this->list[]=$aux;			
 			$i++;
