@@ -22,7 +22,9 @@ class RankingUi
 			<?php echo $sysController->msg?>
 		</div>
 		
-		<span id="external" class="mp3">jump.mp3</span>
+		<!--span id="external" class="mp3">jump.mp3</span-->
+		
+		<!--object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/M9BNoNFKCBI&hl=es_ES&fs=1&autoplay=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/M9BNoNFKCBI&hl=es_ES&fs=1&autoplay=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object><br><br-->
 		
 		<table id="tblRank" cellpadding=3 cellspacing=0>
 			
